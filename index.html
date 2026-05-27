@@ -1,0 +1,857 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunch & Learn: Planning for Boule — The Strategy, Systems & Sanity</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #52211A;
+    --burgundy-light: #7a3328;
+    --gold: #A87605;
+    --gold-light: #d4a020;
+    --gold-pale: #f0d880;
+    --linen: #E8E3DE;
+    --rose: #C29580;
+    --black: #0e0a08;
+    --charcoal: #1c1410;
+    --warm-white: #faf7f3;
+    --ink: #2a1f1a;
+    --sage: #4a6741;
+    --sage-light: #e8f0e6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--charcoal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(168,118,5,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(82,33,26,0.4) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cover-bracket-tl {
+    position: absolute; top: 32px; left: 36px;
+    width: 48px; height: 48px;
+    border-top: 3px solid var(--gold);
+    border-left: 3px solid var(--gold);
+  }
+  .cover-bracket-br {
+    position: absolute; bottom: 32px; right: 36px;
+    width: 48px; height: 48px;
+    border-bottom: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+  }
+  .cover-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    border: 1px solid rgba(168,118,5,0.4);
+    padding: 6px 18px;
+    display: inline-block;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 900;
+    color: var(--linen);
+    line-height: 1.08;
+    max-width: 820px;
+    margin-bottom: 12px;
+  }
+  .cover-title em { font-style: italic; color: var(--gold-light); }
+  .cover-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--rose);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .cover-divider {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 36px;
+  }
+  .cover-meta { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+  .cover-meta-item { text-align: center; }
+  .cover-meta-item .label {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+    color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 4px;
+  }
+  .cover-meta-item .value { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--linen); }
+  .presenter-badge {
+    margin-top: 48px;
+    display: inline-flex; align-items: center; gap: 14px;
+    border: 1px solid rgba(168,118,5,0.3); padding: 14px 24px;
+    background: rgba(168,118,5,0.07);
+  }
+  .presenter-badge .dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .presenter-badge .name { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--linen); letter-spacing: 0.04em; }
+  .presenter-badge .creds { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.12em; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { max-width: 960px; margin: 0 auto; padding: 72px 40px; }
+  .section-label {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.28em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(168,118,5,0.25); max-width: 80px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700; color: var(--burgundy); line-height: 1.15; margin-bottom: 20px;
+  }
+  .section-intro {
+    font-size: 16px; font-weight: 300; color: #5a4038;
+    max-width: 680px; line-height: 1.85; margin-bottom: 48px;
+  }
+
+  /* ── STRIP BAND ── */
+  .strip { background: var(--burgundy); color: var(--linen); padding: 48px 40px; text-align: center; }
+  .strip-inner { max-width: 760px; margin: 0 auto; }
+  .strip-quote { font-family: 'Playfair Display', serif; font-size: clamp(20px, 3vw, 30px); font-style: italic; line-height: 1.5; color: var(--linen); margin-bottom: 16px; }
+  .strip-attr { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; }
+
+  /* ── SAGE STRIP (rejuvenate tone) ── */
+  .strip-sage { background: var(--sage); color: var(--linen); padding: 48px 40px; text-align: center; }
+  .strip-sage .strip-quote { color: var(--linen); }
+  .strip-sage .strip-attr { color: #b8d4b0; }
+
+  /* ── AGENDA ── */
+  .agenda-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px; margin-bottom: 64px; border: 1px solid rgba(82,33,26,0.15);
+  }
+  .agenda-item {
+    padding: 24px 20px; background: var(--warm-white);
+    border-right: 1px solid rgba(82,33,26,0.1); transition: background 0.2s;
+  }
+  .agenda-item:last-child { border-right: none; }
+  .agenda-item:hover { background: var(--linen); }
+  .agenda-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.15em; display: block; margin-bottom: 6px; }
+  .agenda-topic { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--burgundy); line-height: 1.3; }
+  .agenda-item.highlight { background: rgba(82,33,26,0.04); border-left: 3px solid var(--burgundy); }
+  .agenda-item.highlight .agenda-topic { color: var(--burgundy); }
+
+  /* ── PILLAR CARDS ── */
+  .pillars { display: flex; flex-direction: column; gap: 2px; }
+  .pillar {
+    display: grid; grid-template-columns: 64px 1fr; gap: 0;
+    border: 1px solid rgba(82,33,26,0.12); background: var(--warm-white);
+    overflow: hidden; transition: box-shadow 0.25s;
+  }
+  .pillar:hover { box-shadow: 4px 4px 0 var(--gold); }
+  .pillar-num {
+    background: var(--burgundy); display: flex; align-items: flex-start;
+    justify-content: center; padding-top: 28px;
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--gold-light);
+  }
+  .pillar-body { padding: 28px 32px; }
+  .pillar-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--burgundy); margin-bottom: 10px; line-height: 1.2; }
+  .pillar-text { font-size: 14.5px; color: #3d2820; line-height: 1.8; margin-bottom: 14px; }
+  .pillar-pro-tip {
+    background: linear-gradient(135deg, rgba(168,118,5,0.08), rgba(82,33,26,0.05));
+    border-left: 3px solid var(--gold); padding: 12px 16px;
+    font-size: 13px; color: #5a3020; font-weight: 500; line-height: 1.6;
+  }
+  .pillar-pro-tip strong {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em;
+    color: var(--gold); display: block; margin-bottom: 4px; text-transform: uppercase;
+  }
+
+  /* ── BEST PRACTICES GRID ── */
+  .bp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 16px; }
+  .bp-card {
+    background: var(--linen); padding: 28px 26px;
+    border-top: 3px solid var(--burgundy); position: relative;
+  }
+  .bp-card::after {
+    content: ''; position: absolute; bottom: 0; right: 0;
+    width: 24px; height: 24px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold);
+  }
+  .bp-icon { font-size: 24px; margin-bottom: 12px; }
+  .bp-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--burgundy); margin-bottom: 10px; }
+  .bp-text { font-size: 13.5px; color: #4a2e24; line-height: 1.75; }
+
+  /* ── SANITY SECTION ── */
+  .sanity-intro {
+    background: var(--charcoal); color: var(--linen);
+    padding: 56px 40px; margin-bottom: 0;
+  }
+  .sanity-intro-inner { max-width: 760px; margin: 0 auto; }
+  .sanity-intro h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 900; color: var(--linen); margin-bottom: 16px; line-height: 1.15; }
+  .sanity-intro h2 em { color: var(--gold-light); font-style: italic; }
+  .sanity-intro p { font-size: 16px; color: var(--rose); line-height: 1.85; }
+
+  /* ── SANITY THREE-COLUMN GRID ── */
+  .sanity-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; }
+  .sanity-card {
+    padding: 36px 28px; background: var(--warm-white);
+    border-bottom: 3px solid transparent; position: relative; overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .sanity-card:hover { transform: translateY(-3px); }
+  .sanity-card.gold-top { border-bottom-color: var(--gold); }
+  .sanity-card.bur-top { border-bottom-color: var(--burgundy); }
+  .sanity-card.sage-top { border-bottom-color: var(--sage); }
+  .sanity-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .sanity-card.gold-top::before { background: var(--gold); }
+  .sanity-card.bur-top::before { background: var(--burgundy); }
+  .sanity-card.sage-top::before { background: var(--sage); }
+  .sanity-number {
+    font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900;
+    line-height: 1; margin-bottom: 12px; opacity: 0.12; color: var(--burgundy);
+  }
+  .sanity-card.sage-top .sanity-number { color: var(--sage); }
+  .sanity-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+  .sanity-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--burgundy); margin-bottom: 10px; line-height: 1.2; }
+  .sanity-card.sage-top .sanity-title { color: var(--sage); }
+  .sanity-text { font-size: 14px; color: #4a3028; line-height: 1.8; margin-bottom: 14px; }
+  .sanity-tip {
+    border-top: 1px solid rgba(82,33,26,0.12); padding-top: 12px; margin-top: 4px;
+    font-size: 13px; font-weight: 600; color: #5a3020; line-height: 1.6;
+  }
+  .sanity-card.sage-top .sanity-tip { color: var(--sage); border-top-color: rgba(74,103,65,0.2); }
+  .sanity-tip strong {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; display: block; margin-bottom: 4px; color: var(--gold);
+  }
+  .sanity-card.sage-top .sanity-tip strong { color: var(--sage); }
+
+  /* ── STRESS TIPS: QUICK HITS ── */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .tip-card {
+    border: 1px solid rgba(82,33,26,0.15); padding: 22px 20px;
+    background: var(--warm-white); position: relative; overflow: hidden;
+  }
+  .tip-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+  .tip-card.gold::before { background: var(--gold); }
+  .tip-card.bur::before { background: var(--burgundy); }
+  .tip-card.sage::before { background: var(--sage); }
+  .tip-card.rose::before { background: var(--rose); }
+  .tip-num {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 6px; display: block;
+  }
+  .tip-card.gold .tip-num { color: var(--gold); }
+  .tip-card.bur .tip-num { color: var(--burgundy); }
+  .tip-card.sage .tip-num { color: var(--sage); }
+  .tip-card.rose .tip-num { color: var(--rose); }
+  .tip-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .tip-text { font-size: 13.5px; color: #4a3028; line-height: 1.75; }
+
+  /* ── RECHARGE TABLE ── */
+  .recharge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .recharge-col { padding: 32px 28px; }
+  .recharge-col.left { background: var(--burgundy); }
+  .recharge-col.right { background: var(--linen); }
+  .recharge-heading {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .recharge-col.left .recharge-heading { color: var(--gold); }
+  .recharge-col.right .recharge-heading { color: var(--burgundy); }
+  .recharge-item { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+  .recharge-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+  .recharge-col.left .recharge-dot { background: var(--gold); }
+  .recharge-col.right .recharge-dot { background: var(--burgundy); }
+  .recharge-text { font-size: 13.5px; line-height: 1.7; }
+  .recharge-col.left .recharge-text { color: var(--linen); }
+  .recharge-col.right .recharge-text { color: var(--ink); }
+
+  /* ── TOOLS TABLE ── */
+  .tools-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 32px; }
+  .tools-table thead tr { background: var(--burgundy); color: var(--linen); }
+  .tools-table thead th { padding: 14px 18px; text-align: left; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; }
+  .tools-table tbody tr { border-bottom: 1px solid rgba(82,33,26,0.12); }
+  .tools-table tbody tr:nth-child(even) { background: var(--linen); }
+  .tools-table tbody td { padding: 14px 18px; color: #3d2820; vertical-align: top; }
+  .tools-table tbody td:first-child { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--burgundy); }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14.5px; color: #3d2820; line-height: 1.6;
+    padding: 12px 16px; background: var(--warm-white); border: 1px solid rgba(82,33,26,0.1);
+  }
+  .checklist li .check { width: 20px; height: 20px; border: 2px solid var(--gold); flex-shrink: 0; margin-top: 1px; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--gold), var(--burgundy));
+  }
+  .tl-item { margin-bottom: 32px; position: relative; }
+  .tl-dot { position: absolute; left: -27px; top: 4px; width: 14px; height: 14px; background: var(--gold); border: 3px solid var(--warm-white); border-radius: 50%; }
+  .tl-phase { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  .tl-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--burgundy); margin-bottom: 8px; }
+  .tl-text { font-size: 14px; color: #4a3028; line-height: 1.75; }
+
+  /* ── CLOSER / CTA ── */
+  .closer { background: var(--charcoal); padding: 80px 40px; text-align: center; position: relative; overflow: hidden; }
+  .closer::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(168,118,5,0.15) 0%, transparent 70%); }
+  .closer-inner { max-width: 680px; margin: 0 auto; position: relative; }
+  .closer-quote { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3.5vw, 36px); font-weight: 900; color: var(--linen); line-height: 1.3; margin-bottom: 20px; }
+  .closer-quote em { color: var(--gold-light); font-style: italic; }
+  .closer-sub { font-size: 14px; color: var(--rose); letter-spacing: 0.06em; margin-bottom: 40px; }
+
+  /* ── DIVIDER ── */
+  .h-divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(82,33,26,0.2), transparent); margin: 0 40px; }
+  .alt-bg { background: var(--linen); }
+
+  /* ── PREVIOUSLY ON ── */
+  .prev-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px; margin-bottom: 0;
+  }
+  .prev-card {
+    background: var(--warm-white); padding: 28px 24px;
+    border-top: 3px solid var(--gold); position: relative;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .prev-card-num {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900;
+    color: rgba(82,33,26,0.15); line-height: 1; flex-shrink: 0; min-width: 32px;
+  }
+  .prev-card-body {}
+  .prev-card-title {
+    font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700;
+    color: var(--burgundy); margin-bottom: 6px; line-height: 1.25;
+  }
+  .prev-card-text { font-size: 13px; color: #5a4038; line-height: 1.7; }
+
+  /* ── SEQUEL BANNER ── */
+  .sequel-banner {
+    background: var(--gold); padding: 14px 40px;
+    text-align: center;
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.28em;
+    color: var(--charcoal); text-transform: uppercase; font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .section { padding: 48px 24px; }
+    .pillar { grid-template-columns: 48px 1fr; }
+    .pillar-num { font-size: 17px; padding-top: 22px; }
+    .cover { padding: 40px 24px; }
+    .cover-meta { gap: 24px; }
+    .recharge-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .cover { min-height: auto; padding: 60px 40px; }
+    .pillar:hover { box-shadow: none; }
+    .strip { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ COVER ═══════════════════════════════ -->
+<section class="cover">
+  <div class="cover-bracket-tl"></div>
+  <div class="cover-bracket-br"></div>
+  <div class="logo-block">
+      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+    </div>
+  <span class="cover-tag">Lunch &amp; Learn Workshop</span>
+  <h1 class="cover-title">The <em>Sanity</em> Behind<br>Seamless Execution</h1>
+  <p class="cover-sub">Getting Ready &amp; Staying Ready for Boule</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="label">Format</span>
+      <span class="value">Lunch &amp; Learn</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Audience</span>
+      <span class="value">Boule Planning Team</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Duration</span>
+      <span class="value">60 Minutes</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Focus</span>
+      <span class="value">Seamless Execution &amp; Stress Management</span>
+    </div>
+  </div>
+  <div class="presenter-badge">
+    <div class="dot"></div>
+    <div>
+      <div class="name">Dr. Minina Johnson, DBA, PMP</div>
+      <div class="creds">PMP · CSM · SAFe Agilist · 20+ Years Program Management</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ AGENDA ═══════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Workshop Roadmap</div>
+  <h2 class="section-title">What We Are Covering Today</h2>
+  <p class="section-intro">
+    In Part I, we covered the PM principles and operational frameworks that make conference planning hold together. You did that work. This session is the sequel. We go deeper into what makes execution feel seamless from the outside — and then we spend real time on what keeps you whole on the inside. You showed up for Boule. This session shows up for you.
+  </p>
+  <div class="agenda-grid">
+    <div class="agenda-item">
+      <span class="agenda-time">0:00 – 0:05</span>
+      <div class="agenda-topic">Welcome &amp; Session Context</div>
+    </div>
+    <div class="agenda-item">
+      <span class="agenda-time">0:05 – 0:15</span>
+      <div class="agenda-topic">Where We Left Off: 10 Principles Recap</div>
+    </div>
+    <div class="agenda-item highlight">
+      <span class="agenda-time">0:15 – 0:38</span>
+      <div class="agenda-topic">The Sanity Behind Seamless Execution</div>
+    </div>
+    <div class="agenda-item highlight">
+      <span class="agenda-time">0:38 – 0:53</span>
+      <div class="agenda-topic">Tips &amp; Tricks to Manage Stress</div>
+    </div>
+    <div class="agenda-item">
+      <span class="agenda-time">0:53 – 1:00</span>
+      <div class="agenda-topic">Action Items &amp; Close</div>
+    </div>
+  </div>
+</section>
+
+<hr class="h-divider">
+
+<!-- ═══════════════════ STRIP ═══════════════════ -->
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-quote">"The room only feels seamless because someone carried the weight behind the scenes. That someone is you. This session is about making sure you have what you need to keep carrying it — and knowing when to put some of it down."</p>
+    <span class="strip-attr">Workshop Foundation</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PREVIOUSLY ON ═══════════════════════════════ -->
+<section class="section alt-bg">
+  <div class="section-label">Where We Left Off</div>
+  <h2 class="section-title">The 10 Principles —<br>A Quick Recap</h2>
+  <p class="section-intro">
+    Before we go deeper, here is where we started. These ten principles came directly from 20+ years of program management experience and two years of conference planning in the trenches. They are the foundation this session builds on.
+  </p>
+
+  <div class="prev-grid">
+
+    <div class="prev-card">
+      <div class="prev-card-num">1</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">The small details are not small.</div>
+        <p class="prev-card-text">That extra check. That follow-up email. That confirmation nobody thinks they need. When you are managing at scale, there is no such thing as minor. There is only visible and invisible work.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">2</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Questions are not interruptions. They are risk management.</div>
+        <p class="prev-card-text">When a PM keeps asking, they are looking for cracks — the things others are not thinking about yet. Unanswered questions in planning become real issues in execution.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">3</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Clarity is a form of leadership.</div>
+        <p class="prev-card-text">If people are guessing, the project is already off track. Say it clearly. Write it down. Confirm it again. Assumptions do not scale. Clarity does.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">4</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Time lost in preparation shows up as pressure during execution.</div>
+        <p class="prev-card-text">Every shortcut taken early collects interest later. You pay for it in delays, confusion, and stress. Preparation is not extra work. It is the work.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">5</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Solidify the plan before you get in the trenches.</div>
+        <p class="prev-card-text">Once execution starts moving in real time, that is not the moment to still be building, guessing, or scrambling for decisions that should have already been made.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">6</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Communication is not about sending. It is about landing.</div>
+        <p class="prev-card-text">You can send ten messages and still not be understood. The real question is simple: did it land the way it needed to? If not, you keep going until it does.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">7</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">The room only feels seamless because someone carried the weight.</div>
+        <p class="prev-card-text">Execution should look effortless. It never is. Every smooth transition was planned. Every moment that just flowed was engineered. That is the discipline of project management.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">8</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">Real-time execution will always expose the truth about the planning.</div>
+        <p class="prev-card-text">The schedule will tell the truth. The transitions will tell the truth. The response time will tell the truth. Execution reveals whether the foundation was solid or shaky all along.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">9</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">You cannot lead execution and ignore energy.</div>
+        <p class="prev-card-text">Fatigue shows up in missed details. Burnout shows up in delayed decisions. You manage the work. You also manage yourself. The project will pull from you whether you are ready or not.</p>
+      </div>
+    </div>
+
+    <div class="prev-card">
+      <div class="prev-card-num">10</div>
+      <div class="prev-card-body">
+        <div class="prev-card-title">People do not always see the work. But they experience the results.</div>
+        <p class="prev-card-text">They may not know what it took. But they will know how it felt. And that is the standard.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sequel-banner">Now we go deeper &mdash; this is where Part II begins</div>
+
+<!-- ═══════════════════════════════ SANITY SECTION ═══════════════════════════════ -->
+<div class="sanity-intro">
+  <div class="sanity-intro-inner">
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;">The Heart of This Workshop</div>
+    <h2>The <em>Sanity</em> Behind<br>Seamless Execution</h2>
+    <p style="margin-top:20px;">Seamless does not happen by accident. It happens because someone — or a whole team of someones — decided to do the disciplined, unglamorous, invisible work required to make it look easy. That is you. And that work costs something. This section is about understanding what makes execution feel manageable, protecting the people doing it, and building the systems that hold the team together when the pressure is highest.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-bottom:0;">
+  <div class="section-label">Pillar 1 of 3</div>
+  <h2 class="section-title">The Architecture of<br>Seamless Execution</h2>
+  <p class="section-intro">
+    Every moment that "just flows" at Boule was engineered. Here is how that engineering actually works — and what breaks it.
+  </p>
+</section>
+
+<div style="background:var(--warm-white);padding-bottom:64px;">
+  <div class="sanity-pillars" style="max-width:960px;margin:0 auto;padding:0 40px;">
+
+    <div class="sanity-card gold-top">
+      <span class="sanity-icon">🗺</span>
+      <div class="sanity-title">Map Every Moment, Not Just the Major Ones</div>
+      <p class="sanity-text">Seamless execution is built in the transitions — the three-minute window between the end of one session and the start of the next, the moment someone reaches the registration desk and nobody is there, the silence before the AV picks up. Those micro-moments are where execution either holds or breaks. The run-of-show is the map. If it is not on the run-of-show, no one owns it. And if no one owns it, it will expose you.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Script every transition by name, time, and cue. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed.
+      </div>
+    </div>
+
+    <div class="sanity-card bur-top">
+      <span class="sanity-icon">🔂</span>
+      <div class="sanity-title">Rehearse What You Can. Pre-decide What You Cannot.</div>
+      <p class="sanity-text">You cannot rehearse everything. But you can decide in advance what you will do when things go sideways. A speaker is late. The AV fails. Attendance at a session is half of what was expected. The catering order is wrong. These are not rare events — they are the normal texture of live events. The difference between a team that stays calm and one that scrambles is whether the contingency was pre-decided or invented under pressure.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Run a tabletop walkthrough 60 to 90 days out. Walk through the full event day and ask at every decision point: if this goes wrong, what is the move? Document the answers. Distribute them.
+      </div>
+    </div>
+
+    <div class="sanity-card sage-top">
+      <span class="sanity-icon">📡</span>
+      <div class="sanity-title">Build a Communication Command Structure for Execution Day</div>
+      <p class="sanity-text">During execution, communication cannot flow the same way it did in planning. Everyone cannot be in every conversation. Decisions need to be made in seconds, not meetings. The team needs a clear chain — who communicates what to whom, who has decision authority in each area, and what gets escalated versus what gets handled on the floor. Without that structure, information bottlenecks at the top and the people closest to the problem are left guessing.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Create a one-page execution day communication map. Name the lead for each workstream, the decisions they can make independently, and the single escalation contact for anything above their authority. Print it. Everyone carries it.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ PILLAR 2 ═══ -->
+<div class="strip-sage">
+  <div class="strip-inner">
+    <p class="strip-quote">"Execution does not break because of the big things. It breaks because of the small things nobody tracked, nobody owned, and nobody prepared for. Close those gaps in planning — and your team gets to breathe during execution."</p>
+    <span class="strip-attr">Seamless Execution Principle</span>
+  </div>
+</div>
+
+<section class="section alt-bg" style="padding-bottom:0;">
+  <div class="section-label">Pillar 2 of 3</div>
+  <h2 class="section-title">Protecting the Team<br>During Execution</h2>
+  <p class="section-intro">
+    The planning team is the infrastructure of Boule. If that infrastructure is not protected, the event does not hold. These are the operational practices that keep the team functional when the pressure is at its highest.
+  </p>
+</section>
+
+<div style="background:var(--linen);padding-bottom:64px;">
+  <div class="sanity-pillars" style="max-width:960px;margin:0 auto;padding:0 40px;">
+
+    <div class="sanity-card gold-top">
+      <span class="sanity-icon">🔋</span>
+      <div class="sanity-title">Energy is a Non-Renewable Resource During Event Week</div>
+      <p class="sanity-text">The team will arrive at conference week with a finite amount of energy. How that energy is deployed determines how much is left by the time the highest-demand moments arrive. Every task that should have been completed in planning but was not completed will drain from that reserve. Every decision that should have been pre-made but was not will cost more energy under pressure than it would have cost in a planning meeting. Protect the reserve by finishing the work early.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Audit task completion two weeks before the event. Any task still in progress at that point is a risk. Push hard to close everything before conference week begins so the team arrives with energy instead of a list.
+      </div>
+    </div>
+
+    <div class="sanity-card bur-top">
+      <span class="sanity-icon">🔄</span>
+      <div class="sanity-title">Rotate. Rest. Recover. Repeat.</div>
+      <p class="sanity-text">No single team member should hold a high-demand position for the entire duration of the conference. This is not a preference — it is a performance requirement. Fatigue degrades decision quality. A team member who has been on for six hours without a real break is not operating at the same level they were at hour two, even if they feel like they are. The errors happen silently. The missed cue. The dropped detail. The delayed response. Rotate positions. Build breaks into every role assignment.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Build a rotation schedule into the run-of-show. Every high-demand position has a backup who rotates in at scheduled intervals. Breaks are not optional — they are assignments.
+      </div>
+    </div>
+
+    <div class="sanity-card sage-top">
+      <span class="sanity-icon">🛡</span>
+      <div class="sanity-title">Designate a Wellness Anchor — and Mean It</div>
+      <p class="sanity-text">A wellness anchor is not a title. It is a function. Someone on the team whose explicit assignment during conference week includes monitoring the wellbeing of other team members. Not as a secondary responsibility tucked behind their primary role — as an actual designation. They watch for signs of burnout, ensure people are eating and hydrating, prompt breaks, and flag anyone who is struggling before the struggle shows up in a critical moment on the conference floor.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Name the wellness anchor before conference week. Give them explicit permission to pull people aside, redistribute tasks, and escalate wellbeing concerns the same way they would escalate a logistics problem.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ PILLAR 3 ═══ -->
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-quote">"You cannot pour from an empty cup. And you cannot execute a seamless conference from a depleted team. Protection is not a soft concept. It is a project management requirement."</p>
+    <span class="strip-attr">Team Sustainability Principle</span>
+  </div>
+</div>
+
+<section class="section" style="padding-bottom:0;">
+  <div class="section-label">Pillar 3 of 3</div>
+  <h2 class="section-title">When Something Goes Wrong —<br>Because Something Will</h2>
+  <p class="section-intro">
+    The plan will not execute perfectly. That is not pessimism. That is the honest reality of live events. The question is not whether something will go sideways. The question is whether the team has the systems, the clarity, and the composure to handle it without it cascading.
+  </p>
+</section>
+
+<div style="background:var(--warm-white);padding-bottom:64px;">
+  <div class="sanity-pillars" style="max-width:960px;margin:0 auto;padding:0 40px;">
+
+    <div class="sanity-card gold-top">
+      <span class="sanity-icon">🧭</span>
+      <div class="sanity-title">The Problem First. The Person After.</div>
+      <p class="sanity-text">Under pressure, people conflate a missed task with a failed relationship. When something breaks on the conference floor, the team cannot afford to spend its cognitive energy on blame. The question is never "whose fault is this?" It is: what do we do right now? Save the accountability conversation for the debrief. During execution, the only thing that matters is solving the problem in front of you with the resources you have in that moment.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Establish this norm before conference week, not during it. Say it out loud in a team meeting: during execution, we fix the problem first and debrief after. The team that agrees on this in advance does not waste time on it in the moment.
+      </div>
+    </div>
+
+    <div class="sanity-card bur-top">
+      <span class="sanity-icon">📋</span>
+      <div class="sanity-title">Use a Live Issues Log</div>
+      <p class="sanity-text">When something goes wrong during the event, it needs to be captured immediately — not held in someone's head, not sent in a group chat that will be scrolled past, and not left to be reconstructed from memory during the post-conference debrief. A live issues log is a shared document, accessible to all leads, where any problem is logged in real time with what happened, who handled it, and what the resolution was. It becomes the institutional memory of execution day.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Set up the live issues log before conference week and train every lead on how to use it. The format is simple: timestamp, issue, lead who responded, resolution. Two minutes of documentation in the moment saves two hours of reconstruction later.
+      </div>
+    </div>
+
+    <div class="sanity-card sage-top">
+      <span class="sanity-icon">🤝</span>
+      <div class="sanity-title">Close the Loop with the Team — After It Is Over</div>
+      <p class="sanity-text">The transition from "it is over" to "it is truly over" requires a deliberate close. Teams that do not debrief together carry the emotional weight of the event into the next cycle without a release valve. What went well needs to be named specifically. What was hard needs to be surfaced honestly. The toll the work took needs to be acknowledged — not glossed over in the celebration. Teams that process together build the kind of trust that makes the next event better before planning ever begins.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        Schedule the post-conference debrief before the conference happens. Within 14 days. Full team. Structured agenda. Wins first, then growth areas, then action items for next time. Do not let it become optional.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ STRESS MANAGEMENT ═══════════════════════════════ -->
+<section class="section alt-bg">
+  <div class="section-label">Recharge</div>
+  <h2 class="section-title">Tips &amp; Tricks to Actually<br>Manage Stress</h2>
+  <p class="section-intro">
+    These are not generic wellness suggestions. They are field-tested strategies for people who are doing real work under real pressure and need practical tools — not platitudes. Use what resonates. Share what helps.
+  </p>
+
+  <div class="tips-grid">
+
+    <div class="tip-card gold">
+      <span class="tip-num">Before It Starts</span>
+      <div class="tip-title">Name Your Pressure Points Before They Name You</div>
+      <p class="tip-text">Identify the three moments in the conference schedule that you personally dread the most. Write them down. Then ask: what specifically worries me about each one? Address the specifics in planning. The fear of the unknown is almost always worse than the thing itself — and planning removes the unknown.</p>
+    </div>
+
+    <div class="tip-card bur">
+      <span class="tip-num">Before It Starts</span>
+      <div class="tip-title">Finish Strong in the Final Two Weeks</div>
+      <p class="tip-text">The stress you feel during conference week is often stress that was created in the two weeks before it. Tasks left undone. Decisions left open. Confirmations left unsent. Push hard to close every open item before conference week begins. Arrival energy matters. Show up with a list versus showing up ready is a completely different experience.</p>
+    </div>
+
+    <div class="tip-card sage">
+      <span class="tip-num">Before It Starts</span>
+      <div class="tip-title">Protect the 72 Hours Before the Event Opens</div>
+      <p class="tip-text">Decision quality is directly tied to rest. The planning team should not be pulling all-nighters in the final days. Final prep activities need to be scheduled and time-capped. Build a rule: after 10 p.m. in the 72 hours before the event opens, the only acceptable work is genuine emergencies. Everything else waits until morning.</p>
+    </div>
+
+    <div class="tip-card rose">
+      <span class="tip-num">During Execution</span>
+      <div class="tip-title">Eat. Hydrate. Move. On Purpose.</div>
+      <p class="tip-text">These sound basic. They are also the first things to disappear during a high-intensity event. Build your meals, your water, and a five-minute walk into your schedule the same way you build in meeting times. They are not optional. Your brain runs on glucose and hydration. When those drop, so does your judgment. Do not wait until you feel it — schedule it.</p>
+    </div>
+
+    <div class="tip-card gold">
+      <span class="tip-num">During Execution</span>
+      <div class="tip-title">Use the Five-Second Reset</div>
+      <p class="tip-text">When something goes sideways during the event, take five seconds before you react. Not five minutes. Five seconds. Breathe in, slow exhale. That window is enough to move from reactive to responsive. It is the difference between a decision made from panic and a decision made from composure. Practice it before you need it.</p>
+    </div>
+
+    <div class="tip-card bur">
+      <span class="tip-num">During Execution</span>
+      <div class="tip-title">Say What You Need Out Loud</div>
+      <p class="tip-text">Teams under pressure often suffer in silence because everyone assumes everyone else is managing fine. If you need support, a swap, five minutes off the floor, or just someone to stand next to you for a minute — say it. Normalize asking. Normalize offering. A team that communicates its needs during execution is a team that performs through the whole event, not just the first half.</p>
+    </div>
+
+    <div class="tip-card sage">
+      <span class="tip-num">During Execution</span>
+      <div class="tip-title">Find One Thing to Celebrate in Real Time</div>
+      <p class="tip-text">In the middle of execution, it is easy to see only the gaps. The thing that did not go as planned. The late vendor. The session that ran long. Train yourself to also notice what is working — and say it. A quick "that registration flow has been flawless" or "you handled that beautifully" in the moment costs nothing and sustains team morale through the second half of the event.</p>
+    </div>
+
+    <div class="tip-card rose">
+      <span class="tip-num">After It Is Over</span>
+      <div class="tip-title">Give Yourself Permission to Rest — Fully</div>
+      <p class="tip-text">After conference week, the instinct is often to immediately decompress by diving into the debrief, the next project, or the cleanup. Resist it. Give yourself 24 to 48 hours of actual rest before you re-engage. Your nervous system needs to discharge. The debrief will be better when you come to it from a place of recovery, not exhaustion.</p>
+    </div>
+
+    <div class="tip-card gold">
+      <span class="tip-num">After It Is Over</span>
+      <div class="tip-title">Acknowledge What It Actually Took</div>
+      <p class="tip-text">Not in a general sense — specifically. Write down three things that were genuinely hard about this planning cycle. Three things you did that you are proud of. Then share them in the debrief. The team carried something significant. That deserves to be witnessed — by each other, not just by the attendees who experienced the result without knowing what it cost.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ RECHARGE TABLE ═══════════════════ -->
+<div style="max-width:960px;margin:0 auto;padding:0 40px 64px;">
+  <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;margin-top:8px;">Quick Reference</div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--burgundy);margin-bottom:24px;">Stress Triggers vs. Stress Releases</h3>
+  <div class="recharge-grid">
+    <div class="recharge-col left">
+      <div class="recharge-heading">What Creates Stress</div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Tasks that were not closed before conference week</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Decisions that should have been pre-made but were not</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Roles that were assigned verbally but not documented</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Communication that was sent but never confirmed as received</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No rotation plan — one person absorbing everything</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Skipped meals, no water, no breaks treated as optional</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Blame culture when execution problems surface</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No debrief — carrying the weight into the next cycle</div></div>
+    </div>
+    <div class="recharge-col right">
+      <div class="recharge-heading">What Releases Stress</div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A complete task list with every item confirmed done before Day One</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A pre-mortem that surfaces the "what ifs" before execution</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A RACI matrix with written scope for every role</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A read-receipt culture where alignment is confirmed, not assumed</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A rotation schedule built into the run-of-show</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Scheduled meals, water, and movement treated as assignments</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A problem-first norm established before conference week</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A structured debrief that names what it took and what it taught</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ MASTER CHECKLIST ═══════════════════ -->
+<section class="section alt-bg">
+  <div class="section-label">Reference Tool</div>
+  <h2 class="section-title">Pre-Conference Readiness Checklist</h2>
+  <p class="section-intro" style="margin-bottom:32px;">Use this as a team verification tool in your final planning meeting before conference week begins.</p>
+  <ul class="checklist">
+    <li><div class="check"></div> Master project schedule is finalized and baselined with milestone dates confirmed</li>
+    <li><div class="check"></div> RACI matrix is documented and every committee member has reviewed their role assignments</li>
+    <li><div class="check"></div> All vendor contracts are signed with deliverables, timelines, and contact names confirmed in writing</li>
+    <li><div class="check"></div> Run-of-show is built for each conference day with minute-by-minute sequencing and role-specific cues</li>
+    <li><div class="check"></div> Emergency contact directory is complete, printed, and distributed to all committee members</li>
+    <li><div class="check"></div> Contingency plans are documented for at least your top five identified risks</li>
+    <li><div class="check"></div> Budget actuals are reconciled and any variance has been escalated and approved</li>
+    <li><div class="check"></div> All printed materials have been proofed, approved, and confirmed for delivery</li>
+    <li><div class="check"></div> Registration process has been tested end-to-end with a designated lead assigned at the check-in desk</li>
+    <li><div class="check"></div> AV and technology setup has been confirmed with a dry-run scheduled before opening session</li>
+    <li><div class="check"></div> Committee members know their assigned stations, their break times, and their escalation contacts</li>
+    <li><div class="check"></div> Attendee communications (final reminders, schedules, logistics info) have been sent and confirmed delivered</li>
+    <li><div class="check"></div> Lessons learned log template is distributed and committee is committed to capturing in real time</li>
+    <li><div class="check"></div> Post-conference debrief is already scheduled with full committee attendance expected</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════ CLOSER ═══════════════════ -->
+<div class="closer">
+  <div class="closer-inner">
+    <div class="closer-quote">
+      Execution is not built on grand gestures.<br>
+      It is built on <em>disciplined attention</em><br>to what others overlook.
+    </div>
+    <p class="closer-sub">That is where Boule is won. Not in the spotlight. In the details no one claps for. You have what it takes. Now go build something they will remember.</p>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;color:var(--gold);margin-bottom:32px;text-transform:uppercase;">
+      Prepared by Dr. Minina Johnson, DBA, PMP &nbsp;|&nbsp; Greater Ambitions LLC &nbsp;|&nbsp; Tucson, AZ
+    </div>
+    <div class="logo-block">
+      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+    </div>
+    <div style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;color:var(--gold-pale);text-transform:uppercase;border:1px solid rgba(168,118,5,0.4);padding:14px 32px;display:inline-block;">
+      Diagnose. Build. Execute. Scale.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
