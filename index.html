@@ -163,6 +163,19 @@
   .agenda-item.highlight { background: rgba(82,33,26,0.04); border-left: 3px solid var(--burgundy); }
   .agenda-item.highlight .agenda-topic { color: var(--burgundy); }
 
+  /* ── GROUNDING CARDS (new section) ── */
+  .ground-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
+  .ground-card { background: var(--warm-white); border: 1px solid rgba(82,33,26,0.1); position: relative; overflow: hidden; transition: box-shadow 0.2s; }
+  .ground-card:hover { box-shadow: 4px 4px 0 var(--gold); }
+  .ground-card-top { padding: 28px 28px 0; }
+  .ground-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+  .ground-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; display: block; }
+  .ground-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--burgundy); line-height: 1.25; margin-bottom: 12px; }
+  .ground-text { font-size: 14px; color: #3d2820; line-height: 1.8; }
+  .ground-card-action { margin-top: 20px; padding: 14px 28px 22px; border-top: 1px solid rgba(82,33,26,0.1); background: rgba(168,118,5,0.05); }
+  .ground-card-action strong { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 5px; }
+  .ground-card-action span { font-size: 13px; color: #5a3020; line-height: 1.65; font-style: italic; }
+  
   /* ── PILLAR CARDS ── */
   .pillars { display: flex; flex-direction: column; gap: 2px; }
   .pillar {
@@ -409,13 +422,13 @@
     </div>
     <div class="cover-meta-item">
       <span class="label">Focus</span>
-      <span class="value">Seamless Execution &amp; Stress Management</span>
+      <span class="value">Execution Readiness, Seamless Delivery &amp; Stress Management</span>
     </div>
   </div>
   <div class="presenter-badge">
     <div>
       <div class="name">Dr. Minina Johnson, DBA</div>
-      <div class="creds">PMP® · CSM® · SAFe® 6 Agilist · 20+ Years of Acquisitions, Logisitics, & Program Management</div>
+      <div class="creds">PMP® · CSM® · SAFe® 6 Agilist · 20+ Years of Acquisitions, Logisitics &amp; Program Management</div>
     </div>
   </div>
 </section>
@@ -434,7 +447,7 @@
     </div>
     <div class="agenda-item">
       <span class="agenda-time">0:05 – 0:15</span>
-      <div class="agenda-topic">0 PM Principles in Practice</div>
+      <div class="agenda-topic">Execution Readiness: Grounding the Team</div>
     </div>
     <div class="agenda-item highlight">
       <span class="agenda-time">0:15 – 0:35</span>
@@ -460,13 +473,103 @@
     <span class="strip-attr">Workshop Foundation Principle</span>
   </div>
 </div>
-
-<!-- ═══════════════════════════════ PREVIOUSLY ON ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ EXECUTION READINESS — NEW SECTION ═══════════════════════════════ -->
 <section class="section alt-bg">
-  <div class="section-label">Where We Left Off</div>
+  <div class="section-label">Execution Readiness</div>
+  <h2 class="section-title">Grounding the Team<br>Before Game Day</h2>
+  <p class="section-intro">
+    You have done the planning. The contracts are signed. The run-of-show is built. The schedule is set. But there is a space between planning complete and execution ready — and too many teams skip it. This section is about closing that gap. What it means to truly be ready. What the team needs to check internally before Boule begins.
+  </p>
+ 
+  <div class="ground-grid">
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🎯</span>
+        <span class="ground-num">Readiness Check 01</span>
+        <div class="ground-title">Know Your Role. Own Your Lane.</div>
+        <p class="ground-text">One of the most common sources of confusion during execution is a team member who was assigned a role in planning but never truly internalized it. They know the task list. They do not know the weight of what they are carrying. Before Boule begins, every person on the planning team should be able to answer three questions without hesitation: What do I own? What can I decide on my own? And who do I go to when something is above my authority? If the answer to any of those is unclear, that gap needs to close before Day One — not during it.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Each lead reads their role scope aloud in the final team meeting. Hearing it spoken is different from having read it once. It activates ownership in a way that silent review does not.</span>
+      </div>
+    </div>
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🧱</span>
+        <span class="ground-num">Readiness Check 02</span>
+        <div class="ground-title">Decide the Hard Things Now. Not in the Moment.</div>
+        <p class="ground-text">Every decision that is not made before Boule opens will have to be made during Boule — under pressure, in real time, with less information and less patience. Decisions like: what happens if a speaker cancels the morning of? What is the protocol if registration lines get out of control? Who makes the call if a session runs long and the next room is not ready? These are not hypotheticals. They are the normal texture of live events. The team that pre-decides these answers arrives to execution carrying confidence. The team that does not arrives carrying anxiety.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Run a 20-minute "what if" conversation as a team. Name the five scenarios that worry the room most. Decide the answer to each one right now. Write it down. The decision is already made.</span>
+      </div>
+    </div>
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🔐</span>
+        <span class="ground-num">Readiness Check 03</span>
+        <div class="ground-title">Lock What Needs to Be Locked.</div>
+        <p class="ground-text">There is a specific kind of stress that comes from entering execution with open items — tasks still in progress, confirmations still pending, decisions still circling. That stress is not inevitable. It is the product of things that should have been closed and were not. The goal of the final stretch before Boule is not to keep working at the same pace. It is to reach a locked state — where every critical item has been completed, confirmed, and handed off. A team that arrives at locked is a team that can execute freely. A team that arrives with a list is a team that is still planning during execution.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Two weeks out, audit every task in progress. Assign a hard close date to each one. Anything still open at 72 hours before go-time is an escalation item — not a to-do.</span>
+      </div>
+    </div>
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">📻</span>
+        <span class="ground-num">Readiness Check 04</span>
+        <div class="ground-title">Build the Communication Structure Before You Need It.</div>
+        <p class="ground-text">During execution, the way information flows changes completely. There is no time for long threads, crowded group chats, or decisions by committee. The team needs to know exactly who they talk to about what — and only that person. Each workstream lead communicates upward to one point of contact. Issues are escalated through a defined chain, not broadcast to the whole team. When the communication structure is clear before execution starts, the team moves faster, escalates less, and keeps more cognitive bandwidth for the work in front of them.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Build and distribute a one-page execution-day communication map. Name the lead for each workstream, what they own, and who their single escalation contact is. Print it. Every lead carries it physically.</span>
+      </div>
+    </div>
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">💡</span>
+        <span class="ground-num">Readiness Check 05</span>
+        <div class="ground-title">Get Clear on What Success Looks Like — For You.</div>
+        <p class="ground-text">The team has been focused on what success looks like for the attendees. That matters. But each person on the planning team also needs a personal definition of what a successful Boule looks like for them. Not in terms of tasks completed — in terms of how they want to carry themselves. Calm under pressure. Helpful to their team. Present for the moments they worked so hard to create. When that picture is clear before execution starts, it functions as a compass. When something goes sideways — and something will — that personal standard is what the team member returns to instead of reacting from stress.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Take two minutes in the final team meeting. Ask everyone to write down one sentence: "At the end of Boule, I will feel successful if I _____." Not a task. A way of being. Read them aloud if the team is willing.</span>
+      </div>
+    </div>
+ 
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🤲</span>
+        <span class="ground-num">Readiness Check 06</span>
+        <div class="ground-title">Acknowledge What the Team Has Already Done.</div>
+        <p class="ground-text">Teams walk into execution carrying the weight of everything that came before it — the late meetings, the vendor negotiations, the last-minute changes, the moments nobody outside this room saw. That weight is real. And it needs to be named before the team steps onto the conference floor. Not as a complaint. As a recognition. This team built something. The planning cycle is a legitimate accomplishment before a single attendee arrives. When that truth is acknowledged out loud — by the team, for the team — it shifts the energy from exhausted to proud. And proud teams execute differently than drained ones.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>Before Boule Opens</strong>
+        <span>Open your last pre-Boule team meeting with a round of recognition — not generic praise, specific acknowledgment. Name what each person contributed that mattered. Take the time. It is worth it.</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+  
+<!-- ═══════════════════════════════ 10 PRINCIPLES ═══════════════════════════════ -->
+<section class="section alt-bg">
+  <div class="section-label">Core PM Intuition</div>
   <h2 class="section-title">The 10 Principles That Apply<br>Directly to Conference Planning</h2>
   <p class="section-intro">
-    Before we go deeper, here is where we started. These ten principles came directly from 20+ years of program management experience and two years of conference planning in the trenches. They are the foundation this session builds on.
+    Before we go deeper, here is where we started. These ten principles came directly from 20+ years of program management experience and two years of conference planning in the trenches. These are not abstract theories. Every principle below has a direct application for the team in this room right now.
   </p>
 
   <div class="prev-grid">
@@ -477,24 +580,20 @@
         <div class="prev-card-title">Invisible Work is Still Real Work.</div>
         <p class="prev-card-text">Conference planning is full of tasks no one can see until they are missing. Venue confirmation calls, vendor follow-ups, rooming list audits, badge reprints at midnight. These are not administrative extras. They are the structural load-bearing work of the event. Visible deliverables are only possible because of hundreds of invisible decisions made before them.</p>
       </div>
-      <div class="pillar-pro-tip">
-          <strong>Boule Application</strong>
-          Build a task register that captures both visible outputs (program, signage, registration packets) and the invisible inputs behind them. If it only counts when it is missing, it counts all along.
-        </div>
     </div>
 
     <div class="prev-card">
-      <div class="prev-card-num">2</div>
+      <div class="prev-card-num">02</div>
       <div class="prev-card-body">
         <div class="prev-card-title">Questions are not interruptions. They are risk management.</div>
-        <p class="prev-card-text">When a PM keeps asking, they are looking for cracks — the things others are not thinking about yet. Unanswered questions in planning become real issues in execution.</p>
+        <p class="prev-card-text">When a project manager keeps asking, and again, is not being difficult. They are looking for cracks — the things others are not thinking about yet. Each unanswered question is a potential gap, and gaps do not stay gaps — they become problems in execution when there is no runway left to fix them gracefully.</p>
       </div>
     </div>
 
     <div class="prev-card">
-      <div class="prev-card-num">3</div>
+      <div class="prev-card-num">03</div>
       <div class="prev-card-body">
-        <div class="prev-card-title">Clarity is a form of leadership.</div>
+        <div class="prev-card-title">Clarity is a Leadership Skill.</div>
         <p class="prev-card-text">If people are guessing, the project is already off track. Say it clearly. Write it down. Confirm it again. Assumptions do not scale. Clarity does.</p>
       </div>
     </div>
@@ -616,7 +715,7 @@
 <!-- ═══ PILLAR 2 ═══ -->
 <div class="strip-sage">
   <div class="strip-inner">
-    <p class="strip-quote">"Execution does not break because of the big things. It breaks because of the small things nobody tracked, nobody owned, and nobody prepared for. Close those gaps in planning — and your team gets to breathe during execution."</p>
+    <p class="strip-quote">"Execution does not break because of the big things. It breaks because of the small things nobody tracked, nobody owned, and nobody prepared for. Close those gaps in planning — and your team gets to breathe during execution."<br><em>~ Dr. Jaye</em></p>
     <span class="strip-attr">Seamless Execution Principle</span>
   </div>
 </div>
