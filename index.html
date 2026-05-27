@@ -211,7 +211,17 @@
     font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em;
     color: var(--gold); display: block; margin-bottom: 4px; text-transform: uppercase;
   }
-
+  
+/* ── EXECUTION DAY ESSENTIALS TABLE ── */
+  .essentials-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .essentials-table thead tr { background: var(--burgundy); }
+  .essentials-table thead th { padding: 14px 18px; text-align: left; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--linen); }
+  .essentials-table tbody tr { border-bottom: 1px solid rgba(82,33,26,0.12); }
+  .essentials-table tbody tr:nth-child(even) { background: var(--linen); }
+  .essentials-table tbody td { padding: 14px 18px; color: #3d2820; vertical-align: top; line-height: 1.65; }
+  .essentials-table tbody td:first-child { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--burgundy); white-space: nowrap; }
+  .essentials-table tbody td:last-child { font-size: 13px; color: #7a5040; font-style: italic; }
+ 
   /* ── BEST PRACTICES GRID ── */
   .bp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 16px; }
   .bp-card {
@@ -488,7 +498,7 @@
   <div class="section-label">Execution Readiness</div>
   <h2 class="section-title">Grounding the Team<br>Before Game Day</h2>
   <p class="section-intro">
-    You have done the planning. The contracts are signed. The run-of-show is built. The schedule is set. But there is a space between planning complete and execution ready — and too many teams skip it. This section is about closing that gap. What it means to truly be ready. What the team needs to check internally before Boule begins.
+    You have done the planning. The contracts are signed. The run-of-show is built. The schedule is set. But there is a space between planning complete and execution ready — and too many teams skip it. These four readiness checks are what close that gap. What it means to truly be ready. What the team needs to check internally before Boule begins.
   </p>
  
   <div class="ground-grid">
@@ -498,7 +508,7 @@
         <span class="ground-icon">🎯</span>
         <span class="ground-num">Readiness Check 01</span>
         <div class="ground-title">Know Your Role. Own Your Lane.</div>
-        <p class="ground-text">One of the most common sources of confusion during execution is a team member who was assigned a role in planning but never truly internalized it. They know the task list. They do not know the weight of what they are carrying. Before Boule begins, every person on the planning team should be able to answer three questions without hesitation: What do I own? What can I decide on my own? And who do I go to when something is above my authority? If the answer to any of those is unclear, that gap needs to close before Day One — not during it.</p>
+        <p class="ground-text">One of the most common sources of confusion during execution is a team member who was assigned a role in planning but never truly internalized it. They know the task list. They do not know the weight of what they are carrying. Before Boule begins, every person on the planning team should be able to answer three questions without hesitation:<br> 1. What do I own?<br> 2. What can I decide on my own? <br> 3. And who do I go to when something is above my authority?<br>If the answer to any of those is unclear, that gap closes now — not on the conference floor.</p>
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
@@ -510,7 +520,7 @@
       <div class="ground-card-top">
         <span class="ground-icon">🧱</span>
         <span class="ground-num">Readiness Check 02</span>
-        <div class="ground-title">Decide the Hard Things Now. Not in the Moment.</div>
+        <div class="ground-title">Decide the Hard Things Now.<br>Not in the Moment.</div>
         <p class="ground-text">Every decision that is not made before Boule opens will have to be made during Boule — under pressure, in real time, with less information and less patience. Decisions like: what happens if a speaker cancels the morning of? What is the protocol if registration lines get out of control? Who makes the call if a session runs long and the next room is not ready? These are not hypotheticals. They are the normal texture of live events. The team that pre-decides these answers arrives to execution carrying confidence. The team that does not arrives carrying anxiety.</p>
       </div>
       <div class="ground-card-action">
@@ -532,24 +542,12 @@
       </div>
     </div>
  
-    <div class="ground-card">
-      <div class="ground-card-top">
-        <span class="ground-icon">📻</span>
-        <span class="ground-num">Readiness Check 04</span>
-        <div class="ground-title">Build the Communication Structure Before You Need It.</div>
-        <p class="ground-text">During execution, the way information flows changes completely. There is no time for long threads, crowded group chats, or decisions by committee. The team needs to know exactly who they talk to about what — and only that person. Each workstream lead communicates upward to one point of contact. Issues are escalated through a defined chain, not broadcast to the whole team. When the communication structure is clear before execution starts, the team moves faster, escalates less, and keeps more cognitive bandwidth for the work in front of them.</p>
-      </div>
-      <div class="ground-card-action">
-        <strong>Before Boule Opens</strong>
-        <span>Build and distribute a one-page execution-day communication map. Name the lead for each workstream, what they own, and who their single escalation contact is. Print it. Every lead carries it physically.</span>
-      </div>
-    </div>
- 
+    
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">💡</span>
-        <span class="ground-num">Readiness Check 05</span>
-        <div class="ground-title">Get Clear on What Success Looks Like — For You.</div>
+        <span class="ground-num">Readiness Check 04</span>
+        <div class="ground-title">Get Clear on What Success Looks Like —<br>For You.</div>
         <p class="ground-text">The team has been focused on what success looks like for the attendees. That matters. But each person on the planning team also needs a personal definition of what a successful Boule looks like for them. Not in terms of tasks completed — in terms of how they want to carry themselves. Calm under pressure. Helpful to their team. Present for the moments they worked so hard to create. When that picture is clear before execution starts, it functions as a compass. When something goes sideways — and something will — that personal standard is what the team member returns to instead of reacting from stress.</p>
       </div>
       <div class="ground-card-action">
@@ -561,13 +559,13 @@
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">🤲</span>
-        <span class="ground-num">Readiness Check 06</span>
-        <div class="ground-title">Acknowledge What the Team Has Already Done.</div>
-        <p class="ground-text">Teams walk into execution carrying the weight of everything that came before it — the late meetings, the vendor negotiations, the last-minute changes, the moments nobody outside this room saw. That weight is real. And it needs to be named before the team steps onto the conference floor. Not as a complaint. As a recognition. This team built something. The planning cycle is a legitimate accomplishment before a single attendee arrives. When that truth is acknowledged out loud — by the team, for the team — it shifts the energy from exhausted to proud. And proud teams execute differently than drained ones.</p>
+        <span class="ground-num">Readiness Check 05</span>
+        <div class="ground-title">Acknowledge What the Team<br>Has Already Done.</div>
+        <p class="ground-text">Teams walk into execution carrying the weight of everything that came before it — the late meetings, the vendor negotiations, the last-minute changes, the moments nobody outside this room saw. That weight is real. And it needs to be named before the team steps onto the conference floor. Not as a complaint. As a recognition. This team built something. The planning cycle is a legitimate accomplishment before a single attendee arrives. When that truth is acknowledged out loud — by the team, for the team — it shifts the energy from exhausted to proud. And proud teams execute differently than depleted ones.</p>
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
-        <span>Open your last pre-Boule team meeting with a round of recognition — not generic praise, specific acknowledgment. Name what each person contributed that mattered. Take the time. It is worth it.</span>
+        <span>Open your last pre-Boule team meeting with a round of recognition. Not generic praise — name what each person contributed that mattered. It is not wasted. It is fuel.</span>
       </div>
     </div>
  
@@ -578,7 +576,7 @@
 <div class="reflection-band">
   <div class="reflection-band-inner">
     <h3>Take a Moment. Answer These Honestly.</h3>
-    <p>These are not rhetorical. Use them in your final team meeting before Boule opens — individually, then discuss as a group. What surfaces is the work that still needs to happen.</p>
+    <p>These are not rhetorical. Use them in your final team meeting before Boule opens — individually first, then discuss as a group. What surfaces is the work that still needs to happen.</p>
     <div class="reflect-grid">
       <div class="reflect-card">
         <span class="reflect-q-num">Question 01</span>
@@ -589,27 +587,79 @@
         <p class="reflect-q">"Do I know what I am fully responsible for — and what I am not responsible for — on execution day?"</p>
       </div>
       <div class="reflect-card">
+        <br>
         <span class="reflect-q-num">Question 03</span>
-        <p class="reflect-q">"Am I arriving to Boule with a plan — or am I arriving with a list of things I hope work out?"</p>
+        <p class="reflect-q">"Am I arriving to Boule with a locked plan — or am I arriving with a list of things I hope work out?"</p>
       </div>
       <div class="reflect-card">
         <span class="reflect-q-num">Question 04</span>
-        <p class="reflect-q">"Who on this team needs more support right now — and have I said anything about it?"</p>
+        <p class="reflect-q">"Who on this team needs more support right now — and have they said anything about it?"</p>
       </div>
     </div>
   </div>
 </div>
   
-
-
-<div class="sequel-banner">Now we go deeper &mdash; this is where Part II begins</div>
+<!-- ═══════════════════════════════ EXECUTION DAY ESSENTIALS ═══════════════════════════════ -->
+<section class="section">
+  <div class="section-label">Execution Day Essentials</div>
+  <h2 class="section-title">What Every Lead Needs<br>in Hand on Day One</h2>
+  <p class="section-intro">
+    This is not the planning toolkit. This is the execution toolkit — the specific artifacts, access points, and agreements every lead should have confirmed and physically ready before the first attendee arrives.
+  </p>
+  <table class="essentials-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>What It Contains</th>
+        <th>Why It Cannot Wait Until You Need It</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Printed Run-of-Show</td>
+        <td>Minute-by-minute schedule with role cues, AV triggers, transition assignments, and buffer windows marked</td>
+        <td>Digital versions disappear when phones die or wifi drops. The floor copy is the source of truth.</td>
+      </tr>
+      <tr>
+        <td>Emergency Contact Directory</td>
+        <td>Venue liaison, AV lead, catering contact, chapter leadership, and each committee lead — with cell numbers, not just emails</td>
+        <td>Searching a group chat for a number during a live problem costs time you do not have.</td>
+      </tr>
+      <tr>
+        <td>Decision Authority Card</td>
+        <td>One-page map: what each lead owns, what they can decide independently, and who they escalate to — by name</td>
+        <td>Escalation confusion is one of the leading causes of execution delays. This eliminates the question before it is asked.</td>
+      </tr>
+      <tr>
+        <td>Top 5 Contingency Answers</td>
+        <td>Pre-decided responses to the five highest-risk scenarios identified in planning — written, not memorized</td>
+        <td>A decision made under pressure without a reference point is a guess. A pre-decided answer is a plan.</td>
+      </tr>
+      <tr>
+        <td>Live Issues Log Access</td>
+        <td>Shared document — open and ready to use — for logging problems in real time: timestamp, issue, lead, resolution</td>
+        <td>Issues remembered at debrief are half-forgotten. Issues logged in the moment become institutional memory.</td>
+      </tr>
+      <tr>
+        <td>Rotation Schedule</td>
+        <td>Each high-demand role's coverage rotation, break windows, and backup name — built into the run-of-show</td>
+        <td>Fatigue degrades execution. Breaks built in before the event are the only breaks that actually happen.</td>
+      </tr>
+      <tr>
+        <td>Personal Success Statement</td>
+        <td>The one sentence each lead wrote in the final team meeting defining how they want to carry themselves</td>
+        <td>When execution gets hard, the task list is not enough. A personal compass is what keeps composure intact.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 <!-- ═══════════════════════════════ SANITY SECTION ═══════════════════════════════ -->
 <div class="sanity-intro">
   <div class="sanity-intro-inner">
     <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;">The Heart of This Workshop</div>
     <h2>The <em>Sanity</em> Behind<br>Seamless Execution</h2>
-    <p style="margin-top:20px;">Seamless does not happen by accident. It happens because someone — or a whole team of someones — decided to do the disciplined, unglamorous, invisible work required to make it look easy. That is you. And that work costs something. This section is about understanding what makes execution feel manageable, protecting the people doing it, and building the systems that hold the team together when the pressure is highest.</p>
+    <p style="margin-top:20px;">Seamless does not happen by accident. It happens because someone — or a whole team of someones — decided to do the disciplined, unglamorous, invisible work required to make it look easy. That is you. And that work costs something. This section is about understanding what makes execution feel manageable, protecting the people doing it, and building the composure to handle it when it does not go as planned.</p>
   </div>
 </div>
 
@@ -627,10 +677,10 @@
     <div class="sanity-card gold-top">
       <span class="sanity-icon">🗺</span>
       <div class="sanity-title">Map Every Moment, Not Just the Major Ones</div>
-      <p class="sanity-text">Seamless execution is built in the transitions — the three-minute window between the end of one session and the start of the next, the moment someone reaches the registration desk and nobody is there, the silence before the AV picks up. Those micro-moments are where execution either holds or breaks. The run-of-show is the map. If it is not on the run-of-show, no one owns it. And if no one owns it, it will expose you.</p>
+      <p class="sanity-text">Seamless execution is built in the transitions — the thirty-minute window between the end of one session and the start of the next, the moment someone reaches the registration desk and nobody is there, the silence before the AV picks up. Those micro-moments are where execution either holds or breaks. Milestone planning gets the team to the event. Micro-moment planning is what the attendee actually experiences. The run-of-show is the map. If a moment is not on the run-of-show, no one owns it. And if no one owns it, it will surface on the floor without a plan behind it.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Script every transition by name, time, and cue. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed.
+        Walk the run-of-show as a team and identify every gap between named moments. For each one: who owns it, what the cue is, and what smooth looks like. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed. Script every transition, not just the events. 
       </div>
     </div>
 
@@ -641,6 +691,16 @@
       <div class="sanity-tip">
         <strong>What to do</strong>
         Run a tabletop walkthrough 60 to 90 days out. Walk through the full event day and ask at every decision point: if this goes wrong, what is the move? Document the answers. Distribute them.
+      </div>
+    </div>
+
+    <div class="sanity-card bur-top">
+      <span class="sanity-icon">🔂</span>
+      <div class="sanity-title">Stop Performing Calm. Build the Conditions for It.</div>
+      <p class="sanity-text">There is a difference between a team that looks calm during execution and a team that is actually calm. The first is performance. The second is the result of preparation. Teams that are genuinely steady on the floor are steady because they walked in having already made the hard calls — the contingency decisions, the escalation protocols, the problem-first norm. They are not improvising. They are executing a response they already have. That composure cannot be willed into existence on execution day. It has to be built before the team ever steps on the floor.</p>
+      <div class="sanity-tip">
+        <strong>What to do</strong>
+        In the final team meeting, say out loud: during execution, we solve the problem first and debrief after. Teams that agree on this before the conference do not waste time on it during it.
       </div>
     </div>
 
@@ -699,10 +759,10 @@
     <div class="sanity-card sage-top">
       <span class="sanity-icon">🛡</span>
       <div class="sanity-title">Designate a Wellness Anchor — and Mean It</div>
-      <p class="sanity-text">A wellness anchor is not a title. It is a function. Someone on the team whose explicit assignment during conference week includes monitoring the wellbeing of other team members. Not as a secondary responsibility tucked behind their primary role — as an actual designation. They watch for signs of burnout, ensure people are eating and hydrating, prompt breaks, and flag anyone who is struggling before the struggle shows up in a critical moment on the conference floor.</p>
+      <p class="sanity-text">A wellness anchor is not a feel-good title. It is a function with a specific job: monitor the wellbeing of the team during conference week and act on what they see. Not as a secondary responsibility layered onto another role — as an actual designation with real authority. They watch for signs of burnout and fatigue, ensure people are eating and hydrating, prompt breaks, and flag anyone who is struggling before that struggle appears in a critical moment on the conference floor. This role should be named, briefed, and empowered before Boule begins.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Name the wellness anchor before conference week. Give them explicit permission to pull people aside, redistribute tasks, and escalate wellbeing concerns the same way they would escalate a logistics problem.
+        Name the wellness anchor before conference week. Give them explicit permission to pull people aside, redistribute tasks, and escalate wellbeing concerns the same way they would escalate a logistics problem. That permission needs to be given in writing before the event.
       </div>
     </div>
 
@@ -721,7 +781,7 @@
   <div class="section-label">Pillar 3 of 3</div>
   <h2 class="section-title">When Something Goes Wrong —<br>Because Something Will</h2>
   <p class="section-intro">
-    The plan will not execute perfectly. That is not pessimism. That is the honest reality of live events. The question is not whether something will go sideways. The question is whether the team has the systems, the clarity, and the composure to handle it without it cascading.
+    The plan will not execute perfectly. That is not pessimism. That is the honest reality of live events. The question is not whether something will go sideways. The question is whether the team has the composure, the clarity, and the systems to handle it without it cascading into something bigger.
   </p>
 </section>
 
@@ -730,7 +790,7 @@
 
     <div class="sanity-card gold-top">
       <span class="sanity-icon">🧭</span>
-      <div class="sanity-title">The Problem First. The Person After.</div>
+      <div class="sanity-title">The Problem First.<br>The Person After.</div>
       <p class="sanity-text">Under pressure, people conflate a missed task with a failed relationship. When something breaks on the conference floor, the team cannot afford to spend its cognitive energy on blame. The question is never "whose fault is this?" It is: what do we do right now? Save the accountability conversation for the debrief. During execution, the only thing that matters is solving the problem in front of you with the resources you have in that moment.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
@@ -740,21 +800,21 @@
 
     <div class="sanity-card bur-top">
       <span class="sanity-icon">📋</span>
-      <div class="sanity-title">Use a Live Issues Log</div>
-      <p class="sanity-text">When something goes wrong during the event, it needs to be captured immediately — not held in someone's head, not sent in a group chat that will be scrolled past, and not left to be reconstructed from memory during the post-conference debrief. A live issues log is a shared document, accessible to all leads, where any problem is logged in real time with what happened, who handled it, and what the resolution was. It becomes the institutional memory of execution day.</p>
+      <div class="sanity-title">Use a Live Issues Log — Every Time</div>
+      <p class="sanity-text">When something goes wrong during the event, it needs to be captured immediately — not held in someone's head, not sent in a group chat that will be scrolled past, and not left to be reconstructed from memory during the post-conference debrief. A live issues log is a shared document, accessible to all leads, where any problem is logged in real time with what happened, who handled it, and what the resolution was. It becomes the institutional memory of execution day.The format is simple: timestamp, issue, who handled it, resolution. What makes the log powerful is consistency — every problem gets logged, not just the big ones. When the team captures issues in real time, two things happen: first, the debrief becomes a structured conversation about documented facts rather than a memory exercise. Second, any pattern in the problems — a venue layout that is not working, a transition that keeps running long — becomes visible in time to adjust, not just in time to document as a lesson learned after it is too late to fix.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Set up the live issues log before conference week and train every lead on how to use it. The format is simple: timestamp, issue, lead who responded, resolution. Two minutes of documentation in the moment saves two hours of reconstruction later.
+        Set up the live issues log before conference week and train every lead on how to use it. Two minutes of documentation in the moment is worth two hours of reconstruction at the debrief. Every lead logs every issue. No exceptions for "it was minor." Minor issues logged consistently reveal patterns. Unlogged minor issues just repeat.
       </div>
     </div>
 
     <div class="sanity-card sage-top">
       <span class="sanity-icon">🤝</span>
       <div class="sanity-title">Close the Loop with the Team — After It Is Over</div>
-      <p class="sanity-text">The transition from "it is over" to "it is truly over" requires a deliberate close. Teams that do not debrief together carry the emotional weight of the event into the next cycle without a release valve. What went well needs to be named specifically. What was hard needs to be surfaced honestly. The toll the work took needs to be acknowledged — not glossed over in the celebration. Teams that process together build the kind of trust that makes the next event better before planning ever begins.</p>
+      <p class="sanity-text">The transition from "it is over" to "it is truly over" requires a deliberate close. Teams that do not debrief together carry the emotional weight of the event into the next cycle without a release valve. What went well needs to be named specifically — not generally celebrated. What was hard needs to be surfaced honestly — not diplomatically softened. And the toll the work took needs to be acknowledged out loud — not glossed over in the celebration. Teams that process together arrive to the next planning cycle with stronger trust, cleaner lessons, and less unresolved tension. The debrief is not a meeting. It is a commitment to the team's long-term health.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Schedule the post-conference debrief before the conference happens. Within 14 days. Full team. Structured agenda. Wins first, then growth areas, then action items for next time. Do not let it become optional.
+        Schedule the post-conference debrief before the conference happens. Within 14 days. Full team. That date is protected. Structured agenda. Come with the issues log. Discuss wins first, then growth areas, then action items for next time. Come ready to be honest. Do not let it become optional. The room deserves it.
       </div>
     </div>
 
@@ -766,17 +826,23 @@
   <div class="section-label">Recharge</div>
   <h2 class="section-title">Tips &amp; Tricks to Actually<br>Manage Stress</h2>
   <p class="section-intro">
-    These are not generic wellness suggestions. They are field-tested strategies for people who are doing real work under real pressure and need practical tools — not platitudes. Use what resonates. Share what helps.
+    These are field-tested strategies for people doing real work under real pressure. Each one is distinct from what was covered in the Sanity section — these are personal practices, not team systems. Use what resonates. Share what helps.
   </p>
 
   <div class="tips-grid">
 
     <div class="tip-card gold">
-      <span class="tip-num">Before It Starts</span>
+      <span class="tip-num">Mindset</span>
       <div class="tip-title">Name Your Pressure Points Before They Name You</div>
-      <p class="tip-text">Identify the three moments in the conference schedule that you personally dread the most. Write them down. Then ask: what specifically worries me about each one? Address the specifics in planning. The fear of the unknown is almost always worse than the thing itself — and planning removes the unknown.</p>
+      <p class="tip-text">Identify the three moments in the conference schedule that you personally dread the most. Write them down. Then ask: what specifically worries me about each one? Address the specifics now in planning. The fear of the unknown is almost always worse than the moment itself — and planning dissolves the unknown.</p>
     </div>
 
+    <div class="tip-card bur">
+      <span class="tip-num">Mindset</span>
+      <div class="tip-title">Separate Your Identity from the Outcome</div>
+      <p class="tip-text">This team has invested a significant part of their personal identity into making Boule excellent. That investment is appropriate. It is also a source of disproportionate stress when something goes wrong, because a problem with the event can feel like a problem with the person. Practice this distinction before you need it: something went wrong does not mean you failed. It means something went wrong. The response is what defines you — not the problem.</p>
+    </div>
+    
     <div class="tip-card bur">
       <span class="tip-num">Before It Starts</span>
       <div class="tip-title">Finish Strong in the Final Two Weeks</div>
@@ -792,37 +858,37 @@
     <div class="tip-card rose">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Eat. Hydrate. Move. On Purpose.</div>
-      <p class="tip-text">These sound basic. They are also the first things to disappear during a high-intensity event. Build your meals, your water, and a five-minute walk into your schedule the same way you build in meeting times. They are not optional. Your brain runs on glucose and hydration. When those drop, so does your judgment. Do not wait until you feel it — schedule it.</p>
+      <p class="tip-text">These sound basic. They are also the first things to disappear during a high-intensity event. They are also the inputs your decision-making runs on. Build your meals, your water, and a five-minute walk into your schedule the same way you build in meeting times. Not as an option. As a requirement. Your brain runs on glucose and hydration. When those drop, so does your judgment. Do not wait until you feel it — schedule it.</p>
     </div>
 
     <div class="tip-card gold">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Use the Five-Second Reset</div>
-      <p class="tip-text">When something goes sideways during the event, take five seconds before you react. Not five minutes. Five seconds. Breathe in, slow exhale. That window is enough to move from reactive to responsive. It is the difference between a decision made from panic and a decision made from composure. Practice it before you need it.</p>
+      <p class="tip-text">When something goes sideways, take five seconds before you react. Not five minutes. Five seconds. Breathe in, slow exhale. That window is enough to shift from reactive to responsive — from a decision made in panic to a decision made with composure. The five-second reset is free, invisible to everyone around you, and more powerful than any other in-the-moment stress tool. Practice it before you need it so it is available when you do.</p>
     </div>
 
     <div class="tip-card bur">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Say What You Need Out Loud</div>
-      <p class="tip-text">Teams under pressure often suffer in silence because everyone assumes everyone else is managing fine. If you need support, a swap, five minutes off the floor, or just someone to stand next to you for a minute — say it. Normalize asking. Normalize offering. A team that communicates its needs during execution is a team that performs through the whole event, not just the first half.</p>
+      <p class="tip-text">Teams under pressure often suffer in silence because everyone assumes everyone else is managing fine. If you need support, a swap, five minutes off the floor, or just someone to stand next to you for a minute — say it. Normalize asking. Normalize offering. It is how a high-performing team stays high-performing through the full duration of the event, not just the first half when energy is still high.</p>
     </div>
 
     <div class="tip-card sage">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Find One Thing to Celebrate in Real Time</div>
-      <p class="tip-text">In the middle of execution, it is easy to see only the gaps. The thing that did not go as planned. The late vendor. The session that ran long. Train yourself to also notice what is working — and say it. A quick "that registration flow has been flawless" or "you handled that beautifully" in the moment costs nothing and sustains team morale through the second half of the event.</p>
+      <p class="tip-text">Execution narrows your field of view to what is not working. It is easy to see only the gaps. The thing that did not go as planned. The late vendor. The session that ran long. Train yourself to also notice what is working — and name it out loud to the person responsible. A quick "that registration flow has been flawless" or "the way you handled that situation was excellent." Real-time recognition costs nothing and sustains team morale through the second half of the event, when reserves are lower and the work still demands full effort.</p>
     </div>
 
     <div class="tip-card rose">
       <span class="tip-num">After It Is Over</span>
       <div class="tip-title">Give Yourself Permission to Rest — Fully</div>
-      <p class="tip-text">After conference week, the instinct is often to immediately decompress by diving into the debrief, the next project, or the cleanup. Resist it. Give yourself 24 to 48 hours of actual rest before you re-engage. Your nervous system needs to discharge. The debrief will be better when you come to it from a place of recovery, not exhaustion.</p>
+      <p class="tip-text">After Boule week, the instinct is often to immediately decompress by diving into the debrief or the next project. Resist it. Give yourself 24 to 48 hours of actual rest before you re-engage. Your nervous system needs to discharge the intensity before you can assess it clearly. The debrief will be more honest, more useful, and less reactive when the team comes to it from a place of recovery rather than still running on adrenaline.</p>
     </div>
 
     <div class="tip-card gold">
       <span class="tip-num">After It Is Over</span>
       <div class="tip-title">Acknowledge What It Actually Took</div>
-      <p class="tip-text">Not in a general sense — specifically. Write down three things that were genuinely hard about this planning cycle. Three things you did that you are proud of. Then share them in the debrief. The team carried something significant. That deserves to be witnessed — by each other, not just by the attendees who experienced the result without knowing what it cost.</p>
+      <p class="tip-text">Not in a general sense — specifically. Write down three things that were genuinely hard about this planning cycle. Three things you did that you are proud of. Then share them in the debrief. The work this team carried is something significant. It deserves to be witnessed by each other, not just experienced by the attendees who had no idea what it cost to make Boule feel that effortless.</p>
     </div>
 
   </div>
@@ -835,25 +901,25 @@
   <div class="recharge-grid">
     <div class="recharge-col left">
       <div class="recharge-heading">What Creates Stress</div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Tasks that were not closed before conference week</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Decisions that should have been pre-made but were not</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Roles that were assigned verbally but not documented</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Communication that was sent but never confirmed as received</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No rotation plan — one person absorbing everything</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Skipped meals, no water, no breaks treated as optional</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Blame culture when execution problems surface</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No debrief — carrying the weight into the next cycle</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Arriving to execution with open tasks and unmade decisions</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Roles that were assigned verbally but never fully internalized</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No escalation structure — everyone calls everyone about everything</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No rotation plan — one person absorbing every high-demand role</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Conflating a problem on the floor with a personal failure</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Skipped meals, no hydration, no breaks — treated as optional</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Blame during execution instead of problem-solving</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">No debrief — carrying unprocessed weight into the next cycle</div></div>
     </div>
     <div class="recharge-col right">
       <div class="recharge-heading">What Releases Stress</div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A complete task list with every item confirmed done before Day One</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A pre-mortem that surfaces the "what ifs" before execution</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A RACI matrix with written scope for every role</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A read-receipt culture where alignment is confirmed, not assumed</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A rotation schedule built into the run-of-show</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Scheduled meals, water, and movement treated as assignments</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A problem-first norm established before conference week</div></div>
-      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A structured debrief that names what it took and what it taught</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Arriving locked — every task closed, every decision pre-made</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Role scope spoken aloud and owned, not just read once</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A one-page decision authority card every lead carries on Day One</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A rotation schedule built into the run-of-show and enforced</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A personal success statement that functions as a composure anchor</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">Scheduled meals, water, and movement treated as role assignments</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">The problem-first norm agreed on before conference week begins</div></div>
+      <div class="recharge-item"><div class="recharge-dot"></div><div class="recharge-text">A scheduled debrief that names what it took and what it taught</div></div>
     </div>
   </div>
 </div>
