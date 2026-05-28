@@ -221,20 +221,6 @@
   .essentials-table tbody td { padding: 14px 18px; color: #3d2820; vertical-align: top; line-height: 1.65; }
   .essentials-table tbody td:first-child { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--burgundy); white-space: nowrap; }
   .essentials-table tbody td:last-child { font-size: 13px; color: #7a5040; font-style: italic; }
- 
-  /* ── BEST PRACTICES GRID ── */
-  .bp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 16px; }
-  .bp-card {
-    background: var(--linen); padding: 28px 26px;
-    border-top: 3px solid var(--burgundy); position: relative;
-  }
-  .bp-card::after {
-    content: ''; position: absolute; bottom: 0; right: 0;
-    width: 24px; height: 24px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold);
-  }
-  .bp-icon { font-size: 24px; margin-bottom: 12px; }
-  .bp-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--burgundy); margin-bottom: 10px; }
-  .bp-text { font-size: 13.5px; color: #4a2e24; line-height: 1.75; }
 
   /* ── SANITY SECTION ── */
   .sanity-intro {
@@ -520,25 +506,12 @@
       <div class="ground-card-top">
         <span class="ground-icon">🧱</span>
         <span class="ground-num">Readiness Check 02</span>
-        <div class="ground-title">Decide the Hard Things Now.<br>Not in the Moment.</div>
-        <p class="ground-text">Every decision that is not made before Boule opens will have to be made during Boule — under pressure, in real time, with less information and less patience. Decisions like: what happens if a speaker cancels the morning of? What is the protocol if registration lines get out of control? Who makes the call if a session runs long and the next room is not ready? These are not hypotheticals. They are the normal texture of live events. The team that pre-decides these answers arrives to execution carrying confidence. The team that does not arrives carrying anxiety.</p>
+        <div class="ground-title">Decide the Hard Things Now.<br>Not in the Moment.<br>🔐 Lock What Needs to Be Locked.</div>
+        <p class="ground-text">There is a specific kind of stress that comes from entering execution with open items — tasks still in progress, confirmations still pending, decisions still circling. That stress is not inevitable. It is the product of things that should have been closed and were not. Decisions like: what happens if a speaker cancels the morning of? What is the protocol if registration lines get out of control? Who makes the call if a session runs long and the next room is not ready? These are not hypotheticals. They are the normal texture of live events. The goal of the final stretch before Boule is not to keep working at the same pace. It is to reach a locked state — where every critical item has been completed, confirmed, and handed off. A team that arrives at locked is a team that can execute freely and confidently. A team that arrives with a list is a team that is still planning during execution.</p>
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
-        <span>Run a 20-minute "what if" conversation as a team. Name the five scenarios that worry the room most. Decide the answer to each one right now. Write it down. The decision is already made.</span>
-      </div>
-    </div>
- 
-    <div class="ground-card">
-      <div class="ground-card-top">
-        <span class="ground-icon">🔐</span>
-        <span class="ground-num">Readiness Check 03</span>
-        <div class="ground-title">Lock What Needs to Be Locked.</div>
-        <p class="ground-text">There is a specific kind of stress that comes from entering execution with open items — tasks still in progress, confirmations still pending, decisions still circling. That stress is not inevitable. It is the product of things that should have been closed and were not. The goal of the final stretch before Boule is not to keep working at the same pace. It is to reach a locked state — where every critical item has been completed, confirmed, and handed off. A team that arrives at locked is a team that can execute freely. A team that arrives with a list is a team that is still planning during execution.</p>
-      </div>
-      <div class="ground-card-action">
-        <strong>Before Boule Opens</strong>
-        <span>Two weeks out, audit every task in progress. Assign a hard close date to each one. Anything still open at 72 hours before go-time is an escalation item — not a to-do.</span>
+        <span>Two weeks out, run a 20-minute "what if" conversation as a team. Audit every task in progress. Name the five scenarios that worry the room most. Decide the answer to each one right now. Write it down. Lock in each contingency plan or decision made for each scenario. Anything still undecided at 72 hours before go-time is an escalation item — not a to-do.</span>
       </div>
     </div>
  
@@ -546,7 +519,7 @@
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">💡</span>
-        <span class="ground-num">Readiness Check 04</span>
+        <span class="ground-num">Readiness Check 03</span>
         <div class="ground-title">Get Clear on What Success Looks Like —<br>For You.</div>
         <p class="ground-text">The team has been focused on what success looks like for the attendees. That matters. But each person on the planning team also needs a personal definition of what a successful Boule looks like for them. Not in terms of tasks completed — in terms of how they want to carry themselves. Calm under pressure. Helpful to their team. Present for the moments they worked so hard to create. When that picture is clear before execution starts, it functions as a compass. When something goes sideways — and something will — that personal standard is what the team member returns to instead of reacting from stress.</p>
       </div>
@@ -559,7 +532,7 @@
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">🤲</span>
-        <span class="ground-num">Readiness Check 05</span>
+        <span class="ground-num">Readiness Check 04</span>
         <div class="ground-title">Acknowledge What the Team<br>Has Already Done.</div>
         <p class="ground-text">Teams walk into execution carrying the weight of everything that came before it — the late meetings, the vendor negotiations, the last-minute changes, the moments nobody outside this room saw. That weight is real. And it needs to be named before the team steps onto the conference floor. Not as a complaint. As a recognition. This team built something. The planning cycle is a legitimate accomplishment before a single attendee arrives. When that truth is acknowledged out loud — by the team, for the team — it shifts the energy from exhausted to proud. And proud teams execute differently than depleted ones.</p>
       </div>
@@ -586,11 +559,13 @@
         <span class="reflect-q-num">Question 02</span>
         <p class="reflect-q">"Do I know what I am fully responsible for — and what I am not responsible for — on execution day?"</p>
       </div>
+      </div>
+       <div class="reflect-grid">
       <div class="reflect-card">
-        <br>
         <span class="reflect-q-num">Question 03</span>
         <p class="reflect-q">"Am I arriving to Boule with a locked plan — or am I arriving with a list of things I hope work out?"</p>
       </div>
+      
       <div class="reflect-card">
         <span class="reflect-q-num">Question 04</span>
         <p class="reflect-q">"Who on this team needs more support right now — and have they said anything about it?"</p>
@@ -681,16 +656,6 @@
       <div class="sanity-tip">
         <strong>What to do</strong>
         Walk the run-of-show as a team and identify every gap between named moments. For each one: who owns it, what the cue is, and what smooth looks like. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed. Script every transition, not just the events. 
-      </div>
-    </div>
-
-    <div class="sanity-card bur-top">
-      <span class="sanity-icon">🔂</span>
-      <div class="sanity-title">Rehearse What You Can. Pre-decide What You Cannot.</div>
-      <p class="sanity-text">You cannot rehearse everything. But you can decide in advance what you will do when things go sideways. A speaker is late. The AV fails. Attendance at a session is half of what was expected. The catering order is wrong. These are not rare events — they are the normal texture of live events. The difference between a team that stays calm and one that scrambles is whether the contingency was pre-decided or invented under pressure.</p>
-      <div class="sanity-tip">
-        <strong>What to do</strong>
-        Run a tabletop walkthrough 60 to 90 days out. Walk through the full event day and ask at every decision point: if this goes wrong, what is the move? Document the answers. Distribute them.
       </div>
     </div>
 
