@@ -142,7 +142,7 @@
   .strip-quote { font-family: 'Playfair Display', serif; font-size: clamp(20px, 3vw, 30px); font-style: italic; line-height: 1.5; color: var(--linen); margin-bottom: 16px; }
   .strip-attr { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; }
 
-  /* ── SAGE STRIP (rejuvenate tone) ── */
+  /* ── SAGE STRIP ── */
   .strip-sage { background: var(--sage); color: var(--linen); padding: 48px 40px; text-align: center; }
   .strip-sage .strip-quote { color: var(--linen); }
   .strip-sage .strip-attr { color: #b8d4b0; }
@@ -163,7 +163,7 @@
   .agenda-item.highlight { background: rgba(82,33,26,0.04); border-left: 3px solid var(--burgundy); }
   .agenda-item.highlight .agenda-topic { color: var(--burgundy); }
 
-  /* ── GROUNDING CARDS (new section) ── */
+  /* ── GROUNDING CARDS ── */
   .ground-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
   .ground-card { background: var(--warm-white); border: 1px solid rgba(82,33,26,0.1); position: relative; overflow: hidden; transition: box-shadow 0.2s; }
   .ground-card:hover { box-shadow: 4px 4px 0 var(--gold); }
@@ -185,7 +185,7 @@
   .reflect-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(168,118,5,0.2); padding: 24px 22px; }
   .reflect-q-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 8px; }
   .reflect-q { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--linen); line-height: 1.5; font-style: italic; }
-  
+
   /* ── PILLAR CARDS ── */
   .pillars { display: flex; flex-direction: column; gap: 2px; }
   .pillar {
@@ -211,8 +211,8 @@
     font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em;
     color: var(--gold); display: block; margin-bottom: 4px; text-transform: uppercase;
   }
-  
-/* ── EXECUTION DAY ESSENTIALS TABLE ── */
+
+  /* ── EXECUTION DAY ESSENTIALS TABLE ── */
   .essentials-table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .essentials-table thead tr { background: var(--burgundy); }
   .essentials-table thead th { padding: 14px 18px; text-align: left; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--linen); }
@@ -223,10 +223,7 @@
   .essentials-table tbody td:last-child { font-size: 13px; color: #7a5040; font-style: italic; }
 
   /* ── SANITY SECTION ── */
-  .sanity-intro {
-    background: var(--charcoal); color: var(--linen);
-    padding: 56px 40px; margin-bottom: 0;
-  }
+  .sanity-intro { background: var(--charcoal); color: var(--linen); padding: 56px 40px; margin-bottom: 0; }
   .sanity-intro-inner { max-width: 760px; margin: 0 auto; }
   .sanity-intro h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 900; color: var(--linen); margin-bottom: 16px; line-height: 1.15; }
   .sanity-intro h2 em { color: var(--gold-light); font-style: italic; }
@@ -243,50 +240,30 @@
   .sanity-card.gold-top { border-bottom-color: var(--gold); }
   .sanity-card.bur-top { border-bottom-color: var(--burgundy); }
   .sanity-card.sage-top { border-bottom-color: var(--sage); }
-  .sanity-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  }
+  .sanity-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
   .sanity-card.gold-top::before { background: var(--gold); }
   .sanity-card.bur-top::before { background: var(--burgundy); }
   .sanity-card.sage-top::before { background: var(--sage); }
-  .sanity-number {
-    font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900;
-    line-height: 1; margin-bottom: 12px; opacity: 0.12; color: var(--burgundy);
-  }
+  .sanity-number { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; line-height: 1; margin-bottom: 12px; opacity: 0.12; color: var(--burgundy); }
   .sanity-card.sage-top .sanity-number { color: var(--sage); }
   .sanity-icon { font-size: 28px; margin-bottom: 14px; display: block; }
   .sanity-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--burgundy); margin-bottom: 10px; line-height: 1.2; }
   .sanity-card.sage-top .sanity-title { color: var(--sage); }
   .sanity-text { font-size: 14px; color: #4a3028; line-height: 1.8; margin-bottom: 14px; }
-  .sanity-tip {
-    border-top: 1px solid rgba(82,33,26,0.12); padding-top: 12px; margin-top: 4px;
-    font-size: 13px; font-weight: 600; color: #5a3020; line-height: 1.6;
-  }
+  .sanity-tip { border-top: 1px solid rgba(82,33,26,0.12); padding-top: 12px; margin-top: 4px; font-size: 13px; font-weight: 600; color: #5a3020; line-height: 1.6; }
   .sanity-card.sage-top .sanity-tip { color: var(--sage); border-top-color: rgba(74,103,65,0.2); }
-  .sanity-tip strong {
-    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
-    text-transform: uppercase; display: block; margin-bottom: 4px; color: var(--gold);
-  }
+  .sanity-tip strong { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 4px; color: var(--gold); }
   .sanity-card.sage-top .sanity-tip strong { color: var(--sage); }
 
-  /* ── STRESS TIPS: QUICK HITS ── */
+  /* ── STRESS TIPS ── */
   .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-  .tip-card {
-    border: 1px solid rgba(82,33,26,0.15); padding: 22px 20px;
-    background: var(--warm-white); position: relative; overflow: hidden;
-  }
-  .tip-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%;
-  }
+  .tip-card { border: 1px solid rgba(82,33,26,0.15); padding: 22px 20px; background: var(--warm-white); position: relative; overflow: hidden; }
+  .tip-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
   .tip-card.gold::before { background: var(--gold); }
   .tip-card.bur::before { background: var(--burgundy); }
   .tip-card.sage::before { background: var(--sage); }
   .tip-card.rose::before { background: var(--rose); }
-  .tip-num {
-    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
-    text-transform: uppercase; margin-bottom: 6px; display: block;
-  }
+  .tip-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; display: block; }
   .tip-card.gold .tip-num { color: var(--gold); }
   .tip-card.bur .tip-num { color: var(--burgundy); }
   .tip-card.sage .tip-num { color: var(--sage); }
@@ -299,10 +276,7 @@
   .recharge-col { padding: 32px 28px; }
   .recharge-col.left { background: var(--burgundy); }
   .recharge-col.right { background: var(--linen); }
-  .recharge-heading {
-    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em;
-    text-transform: uppercase; margin-bottom: 20px;
-  }
+  .recharge-heading { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 20px; }
   .recharge-col.left .recharge-heading { color: var(--gold); }
   .recharge-col.right .recharge-heading { color: var(--burgundy); }
   .recharge-item { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
@@ -324,19 +298,12 @@
 
   /* ── CHECKLIST ── */
   .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .checklist li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 14.5px; color: #3d2820; line-height: 1.6;
-    padding: 12px 16px; background: var(--warm-white); border: 1px solid rgba(82,33,26,0.1);
-  }
+  .checklist li { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; color: #3d2820; line-height: 1.6; padding: 12px 16px; background: var(--warm-white); border: 1px solid rgba(82,33,26,0.1); }
   .checklist li .check { width: 20px; height: 20px; border: 2px solid var(--gold); flex-shrink: 0; margin-top: 1px; }
 
   /* ── TIMELINE ── */
   .timeline { position: relative; padding-left: 32px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
-    width: 2px; background: linear-gradient(to bottom, var(--gold), var(--burgundy));
-  }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--burgundy)); }
   .tl-item { margin-bottom: 32px; position: relative; }
   .tl-dot { position: absolute; left: -27px; top: 4px; width: 14px; height: 14px; background: var(--gold); border: 3px solid var(--warm-white); border-radius: 50%; }
   .tl-phase { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
@@ -355,33 +322,66 @@
   .h-divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(82,33,26,0.2), transparent); margin: 0 40px; }
   .alt-bg { background: var(--linen); }
 
-  /* ── PREVIOUSLY ON ── */
-  .prev-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px; margin-bottom: 0;
+  /* ── NEW SECTION CALLOUT ── */
+  .new-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--warm-white);
+    background: var(--sage); padding: 3px 10px; margin-left: 12px;
+    vertical-align: middle; position: relative; top: -2px;
   }
-  .prev-card {
-    background: var(--warm-white); padding: 28px 24px;
-    border-top: 3px solid var(--gold); position: relative;
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .prev-card-num {
-    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900;
-    color: rgba(82,33,26,0.15); line-height: 1; flex-shrink: 0; min-width: 32px;
-  }
-  .prev-card-body {}
-  .prev-card-title {
-    font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700;
-    color: var(--burgundy); margin-bottom: 6px; line-height: 1.25;
-  }
-  .prev-card-text { font-size: 13px; color: #5a4038; line-height: 1.7; }
 
-  /* ── SEQUEL BANNER ── */
-  .sequel-banner {
-    background: var(--gold); padding: 14px 40px;
-    text-align: center;
-    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.28em;
-    color: var(--charcoal); text-transform: uppercase; font-weight: 600;
+  /* ── MEETING PHASE TABS ── */
+  .phase-tabs { display: flex; gap: 0; margin-bottom: 48px; border: 1px solid rgba(82,33,26,0.15); }
+  .phase-tab {
+    flex: 1; padding: 20px 24px; text-align: center; cursor: default;
+    border-right: 1px solid rgba(82,33,26,0.15);
+    position: relative;
+  }
+  .phase-tab:last-child { border-right: none; }
+  .phase-tab.pre { background: var(--burgundy); }
+  .phase-tab.post { background: var(--sage); }
+  .phase-tab-label {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em;
+    text-transform: uppercase; display: block; margin-bottom: 5px; color: rgba(255,255,255,0.6);
+  }
+  .phase-tab-title {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--linen);
+  }
+  .phase-tab-desc { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; line-height: 1.5; }
+
+  /* ── PHASE HEADER DIVIDER ── */
+  .phase-header {
+    display: flex; align-items: center; gap: 16px; margin: 48px 0 24px;
+    padding-bottom: 14px; border-bottom: 2px solid;
+  }
+  .phase-header.pre { border-color: var(--burgundy); }
+  .phase-header.post { border-color: var(--sage); }
+  .phase-header-badge {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.22em;
+    text-transform: uppercase; padding: 5px 14px; flex-shrink: 0;
+  }
+  .phase-header.pre .phase-header-badge { background: var(--burgundy); color: var(--linen); }
+  .phase-header.post .phase-header-badge { background: var(--sage); color: var(--linen); }
+  .phase-header-title {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  }
+  .phase-header.pre .phase-header-title { color: var(--burgundy); }
+  .phase-header.post .phase-header-title { color: var(--sage); }
+  .phase-header-sub { font-size: 13px; color: #7a5040; margin-left: auto; font-style: italic; white-space: nowrap; }
+
+  /* ── POST-BOULE CHECKLIST ── */
+  .post-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 40px; }
+  .post-checklist li {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 14px; color: #3d2820; line-height: 1.6;
+    padding: 14px 18px; background: var(--warm-white);
+    border: 1px solid rgba(74,103,65,0.2); border-left: 4px solid var(--sage);
+  }
+  .post-checklist li .post-check { width: 18px; height: 18px; border: 2px solid var(--sage); flex-shrink: 0; margin-top: 2px; }
+  .post-checklist-label {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 3px;
   }
 
   @media (max-width: 640px) {
@@ -406,8 +406,8 @@
   <div class="cover-bracket-tl"></div>
   <div class="cover-bracket-br"></div>
   <div class="logo-block">
-      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
-    </div>
+    <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='Greater Ambitions LLC'></a>
+  </div>
   <br>
   <span class="cover-tag">Lunch &amp; Learn Workshop</span>
   <h1 class="cover-title">The <em>Sanity</em> Behind<br>Seamless Execution</h1>
@@ -434,7 +434,7 @@
   <div class="presenter-badge">
     <div>
       <div class="name">Dr. Minina Johnson, DBA</div>
-      <div class="creds">PMP® · CSM® · SAFe® 6 Agilist · 20+ Years of Acquisitions, Logisitics &amp; Program Management</div>
+      <div class="creds">PMP® · CSM® · SAFe® 6 Agilist · 20+ Years of Acquisitions, Logistics &amp; Program Management</div>
     </div>
   </div>
 </section>
@@ -444,28 +444,36 @@
   <div class="section-label">Workshop Roadmap</div>
   <h2 class="section-title">What We Are Covering Today</h2>
   <p class="section-intro">
-    This is not a standard training. This is a reset. You've done the heavy planning work. We are going to go deeper into what makes execution feel seamless from the outside — and then we spend real time on what keeps you whole on the inside. You showed up for Boule. This session shows up for you.
+    This is not a standard training. This is a reset. You have done the heavy planning work. We are going to go deeper into what makes execution feel seamless from the outside — and then we spend real time on what keeps you whole on the inside. You showed up for Boule. This session shows up for you.
   </p>
   <div class="agenda-grid">
     <div class="agenda-item">
       <span class="agenda-time">0:00 – 0:05</span>
       <div class="agenda-topic">Welcome &amp; Session Context</div>
     </div>
-    <div class="agenda-item">
+    <div class="agenda-item highlight">
       <span class="agenda-time">0:05 – 0:15</span>
+      <div class="agenda-topic">Pre-Boule Meeting Facilitation</div>
+    </div>
+    <div class="agenda-item highlight">
+      <span class="agenda-time">0:15 – 0:22</span>
+      <div class="agenda-topic">Pre-Boule Readiness Checklist</div>
+    </div>
+    <div class="agenda-item">
+      <span class="agenda-time">0:22 – 0:30</span>
       <div class="agenda-topic">Execution Readiness: Grounding the Team</div>
     </div>
     <div class="agenda-item highlight">
-      <span class="agenda-time">0:15 – 0:35</span>
-      <div class="agenda-topic">The Sanity Behind Seamless Execution</div>
+      <span class="agenda-time">0:30 – 0:40</span>
+      <div class="agenda-topic">Planning Best Practices &amp; Sanity</div>
     </div>
     <div class="agenda-item highlight">
-      <span class="agenda-time">0:35 – 0:45</span>
-      <div class="agenda-topic">Recharge: Tips &amp; Tricks to Manage Stress</div>
+      <span class="agenda-time">0:40 – 0:50</span>
+      <div class="agenda-topic">Recharge: Managing Stress in Real Time</div>
     </div>
-    <div class="agenda-item">
-      <span class="agenda-time">0:45 – 1:00</span>
-      <div class="agenda-topic">Action Items &amp; Close</div>
+    <div class="agenda-item highlight">
+      <span class="agenda-time">0:50 – 1:00</span>
+      <div class="agenda-topic">Post-Boule Meeting Facilitation &amp; Close</div>
     </div>
   </div>
 </section>
@@ -475,52 +483,212 @@
 <!-- ═══════════════════ STRIP ═══════════════════ -->
 <div class="strip">
   <div class="strip-inner">
-    <p class="strip-quote">"The room only feels seamless because someone carried the weight behind the scenes. That someone is you. This session is about making sure you have what you need to keep carrying it — and knowing when to put some of it down."<br>~ Dr. Jaye<em></em></p>
+    <p class="strip-quote">"The room only feels seamless because someone carried the weight behind the scenes. That someone is you. This session is about making sure you have what you need to keep carrying it — and knowing when to put some of it down."<br>~ Dr. Jaye</p>
     <span class="strip-attr">Workshop Foundation Principle</span>
   </div>
 </div>
-<!-- ═══════════════════════════════ EXECUTION READINESS — NEW SECTION ═══════════════════════════════ -->
+
+<!-- ═══════════════════════════════ MEETING FACILITATION — REVISED SECTION ═══════════════════════════════ -->
 <section class="section alt-bg">
+  <div class="section-label">Communication That Moves the Work <span class="new-badge">New</span></div>
+  <h2 class="section-title">Meeting Facilitation:<br>Before &amp; After Boule</h2>
+  <p class="section-intro">
+    Most planning teams spend months in meetings. Very few of those meetings are actually well-run. A meeting that does not produce a decision, a clear owner, or a next action is not a meeting — it is a conversation with a calendar invite. The facilitation standards that move work forward do not change based on timing. But what each meeting needs to produce is completely different depending on where you are in the cycle.
+  </p>
+
+  <!-- Phase Overview Tabs -->
+  <div class="phase-tabs">
+    <div class="phase-tab pre">
+      <span class="phase-tab-label">Phase One</span>
+      <div class="phase-tab-title">Pre-Boule Meetings</div>
+      <div class="phase-tab-desc">Build alignment, assign ownership, close every open item before game day</div>
+    </div>
+    <div class="phase-tab post">
+      <span class="phase-tab-label">Phase Two</span>
+      <div class="phase-tab-title">Post-Boule Meetings</div>
+      <div class="phase-tab-desc">Process what happened, capture lessons, and close the cycle with the team</div>
+    </div>
+  </div>
+
+  <!-- PRE-BOULE -->
+  <div class="phase-header pre">
+    <span class="phase-header-badge">Pre-Boule</span>
+    <div class="phase-header-title">Running the Meetings That Build the Plan</div>
+    <span class="phase-header-sub">Planning through final lock</span>
+  </div>
+
+  <div class="pillars">
+
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Set the Objective Before You Set the Agenda</div>
+        <p class="pillar-text">Most meeting agendas are topic lists. What they are missing is the answer to one question: what does this meeting need to produce? A decision. A confirmed handoff. A locked plan. If you cannot name the output before the meeting starts, you are not ready to call the meeting. An agenda without an objective is an invitation to talk in circles. Every pre-Boule planning meeting should have a stated output in the invite — not just a list of topics, but the specific thing that needs to exist when the meeting ends that did not exist when it started.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Open every meeting with one sentence: "When we leave today, we need to have decided / confirmed / completed ___." Say it out loud. Write it on a shared screen. It anchors the room and gives everyone a shared definition of a productive hour.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Clarity Is Not Optional — It Is the Output</div>
+        <p class="pillar-text">If people are leaving a meeting still guessing about what was decided, who owns it, or what happens next — the meeting failed. It does not matter how much was discussed. Discussion is not a deliverable. Clarity is. When you are facilitating, your job is not to run through the agenda. Your job is to make sure nothing leaves the room ambiguous. Assumptions do not scale. Clarity does. And clarity is a discipline — it does not happen naturally in group settings. Someone has to manufacture it on purpose, every single meeting.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          End every agenda item with a thirty-second close: "What was decided? Who owns it? What is the deadline?" Do not move to the next item until those three questions have a spoken answer. If anyone gives a different answer, you have not reached clarity — you have reached the illusion of it.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Communication Is Not About Sending. It Is About Landing.</div>
+        <p class="pillar-text">You can send ten messages and still not be understood. You can hold five meetings and still not have alignment. The measure of communication is not how much was transmitted — it is whether it landed the way it needed to. The loudest voice in the room is often not the one carrying the most critical information. The quietest person at the table may be sitting on the risk nobody has named yet. A skilled facilitator creates the conditions for the right information to surface — not just the most comfortable version of it. That means actively drawing out the people who are not speaking, and never confusing room silence with room agreement.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Before closing any major decision, do a one-round check: ask each person to confirm their understanding in one sentence. When people say it back in their own words, gaps in alignment surface while there is still time to close them.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <div class="pillar-title">The Project Manager Asking Questions Is Not Being Difficult</div>
+        <p class="pillar-text">One of the most misunderstood behaviors in planning meetings is the PM who keeps asking questions after the group thinks the conversation is done. That is not obstruction. That is the job. A project manager's mind is trained to find the cracks before execution exposes them. When a PM asks again, follows up again, or requests more detail, it is because unanswered questions in planning become real problems in execution. The facilitator's role is to protect that process — not rush past it because the room wants to move on. If a question is being asked, it deserves an answer. If the answer does not exist yet, that is the most important thing the meeting produced.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Keep a visible parking lot — a running list of questions raised that do not yet have answers. Every item gets an owner and a deadline. Parking lot items are tracked, not dismissed. An unanswered question that gets followed up is infinitely better than one that gets ignored and resurfaces on the conference floor.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Close Every Meeting With a Written Record — Not a Memory</div>
+        <p class="pillar-text">Verbal agreements in pre-Boule meetings have a short shelf life. By the next morning, two people will remember the same decision differently. By next week, three people will have acted on three different versions of what was agreed. Meeting notes are not administrative overhead — they are the mechanism that keeps the team moving in the same direction. Every pre-Boule planning meeting ends with a written summary: decisions made, owners assigned, deadlines confirmed. Sent within 24 hours. This is different from the execution day issues log, which captures problems in real time on the conference floor. Planning notes capture alignment before execution begins.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Designate a dedicated note-taker — someone whose only job is to capture decisions, owners, and next steps in real time. Do not facilitate and document simultaneously. The output suffers when one person carries both roles. Notes go out the same day. No reply confirmation means the loop is still open.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════ PRE-BOULE READINESS CHECKLIST ═══════════════════ -->
+<section class="section alt-bg">
+  <div class="section-label">Reference Tool</div>
+  <h2 class="section-title">Pre-Boule Readiness Checklist</h2>
+  <p class="section-intro" style="margin-bottom:32px;">Use this as a team verification tool in your final planning meeting before conference week begins.</p>
+  <ul class="post-checklist">
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Schedule</span>Master project schedule is finalized and baselined with milestone dates confirmed</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Roles</span>RACI matrix is documented and every committee member has reviewed their role assignments</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Contracts</span>All vendor contracts are signed with deliverables, timelines, and contact names confirmed in writing</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Run-of-Show</span>Run-of-show is built for each conference day with minute-by-minute sequencing and role-specific cues</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Emergency Contacts</span>Emergency contact directory is complete, printed, and distributed to all committee members</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Contingency</span>Contingency plans are documented for at least your top five identified risks</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Budget</span>Budget actuals are reconciled and any variance has been escalated and approved</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Materials</span>All printed materials have been proofed, approved, and confirmed for delivery</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Registration</span>Registration process has been tested end-to-end with a designated lead assigned at the check-in desk</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Technology</span>AV and technology setup has been confirmed with a dry-run scheduled before opening session</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Assignments</span>Committee members know their assigned stations, their break times, and their escalation contacts</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Communications</span>Attendee communications (final reminders, schedules, logistics info) have been sent and confirmed delivered</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Issues Log</span>Lessons learned log template is distributed and committee is committed to capturing in real time</div>
+    </li>
+    <li>
+      <div class="post-check"></div>
+      <div><span class="post-checklist-label">Debrief</span>Post-conference debrief is already scheduled with full committee attendance expected</div>
+    </li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════ EXECUTION READINESS — EXISTING SECTION ═══════════════════════════════ -->
+<section class="section">
   <div class="section-label">Execution Readiness</div>
   <h2 class="section-title">Grounding the Team<br>Before Game Day</h2>
   <p class="section-intro">
     You have done the planning. The contracts are signed. The run-of-show is built. The schedule is set. But there is a space between planning complete and execution ready — and too many teams skip it. These four readiness checks are what close that gap. What it means to truly be ready. What the team needs to check internally before Boule begins.
   </p>
- 
+
   <div class="ground-grid">
- 
+
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">🎯</span>
         <span class="ground-num">Readiness Check 01</span>
         <div class="ground-title">Know Your Role. Own Your Lane.</div>
-        <p class="ground-text">One of the most common sources of confusion during execution is a team member who was assigned a role in planning but never truly internalized it. They know the task list. They do not know the weight of what they are carrying. Before Boule begins, every person on the planning team should be able to answer three questions without hesitation:<br> 1. What do I own?<br> 2. What can I decide on my own? <br> 3. And who do I go to when something is above my authority?<br>If the answer to any of those is unclear, that gap closes now — not on the conference floor.</p>
+        <p class="ground-text">One of the most common sources of confusion during execution is a team member who was assigned a role in planning but never truly internalized it. They know the task list. They do not know the weight of what they are carrying. Before Boule begins, every person on the planning team should be able to answer three questions without hesitation:<br>1. What do I own?<br>2. What can I decide on my own?<br>3. Who do I go to when something is above my authority?<br>If the answer to any of those is unclear, that gap closes now — not on the conference floor.</p>
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
         <span>Each lead reads their role scope aloud in the final team meeting. Hearing it spoken is different from having read it once. It activates ownership in a way that silent review does not.</span>
       </div>
     </div>
- 
+
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">🧱</span>
         <span class="ground-num">Readiness Check 02</span>
-        <div class="ground-title">Decide the Hard Things Now.<br>Not in the Moment.<br>🔐 Lock What Needs to Be Locked.</div>
+        <div class="ground-title">Decide the Hard Things Now.<br>Not in the Moment.<br>Lock What Needs to Be Locked.</div>
         <p class="ground-text">There is a specific kind of stress that comes from entering execution with open items — tasks still in progress, confirmations still pending, decisions still circling. That stress is not inevitable. It is the product of things that should have been closed and were not. Decisions like: what happens if a speaker cancels the morning of? What is the protocol if registration lines get out of control? Who makes the call if a session runs long and the next room is not ready? These are not hypotheticals. They are the normal texture of live events. The goal of the final stretch before Boule is not to keep working at the same pace. It is to reach a locked state — where every critical item has been completed, confirmed, and handed off. A team that arrives at locked is a team that can execute freely and confidently. A team that arrives with a list is a team that is still planning during execution.</p>
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
-        <span>Two weeks out, run a 20-minute "what if" conversation as a team. Audit every task in progress. Name the five scenarios that worry the room most. Decide the answer to each one right now. Write it down. Lock in each contingency plan or decision made for each scenario. Anything still undecided at 72 hours before go-time is an escalation item — not a to-do.</span>
+        <span>Two weeks out, run a 20-minute "what if" conversation as a team. Audit every task in progress. Name the five scenarios that worry the room most. Decide the answer to each one right now. Write it down. Anything still undecided at 72 hours before go-time is an escalation item — not a to-do.</span>
       </div>
     </div>
- 
-    
+
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">💡</span>
         <span class="ground-num">Readiness Check 03</span>
-        <div class="ground-title">Get Clear on What Success Looks Like —<br>For You.</div>
+        <div class="ground-title">Get Clear on What Success Looks Like — For You.</div>
         <p class="ground-text">The team has been focused on what success looks like for the attendees. That matters. But each person on the planning team also needs a personal definition of what a successful Boule looks like for them. Not in terms of tasks completed — in terms of how they want to carry themselves. Calm under pressure. Helpful to their team. Present for the moments they worked so hard to create. When that picture is clear before execution starts, it functions as a compass. When something goes sideways — and something will — that personal standard is what the team member returns to instead of reacting from stress.</p>
       </div>
       <div class="ground-card-action">
@@ -528,7 +696,7 @@
         <span>Take two minutes in the final team meeting. Ask everyone to write down one sentence: "At the end of Boule, I will feel successful if I _____." Not a task. A way of being. Read them aloud if the team is willing.</span>
       </div>
     </div>
- 
+
     <div class="ground-card">
       <div class="ground-card-top">
         <span class="ground-icon">🤲</span>
@@ -538,14 +706,14 @@
       </div>
       <div class="ground-card-action">
         <strong>Before Boule Opens</strong>
-        <span>Open your last pre-Boule team meeting with a round of recognition. Not generic praise — name what each person contributed that mattered. It is not wasted. It is fuel.</span>
+        <span>Open your last pre-Boule team meeting with a round of recognition. Not generic praise — name what each person contributed that mattered. It is not wasted time. It is fuel.</span>
       </div>
     </div>
- 
+
   </div>
 </section>
 
-  <!-- ═══════════════════ REFLECTION BAND ═══════════════════ -->
+<!-- ═══════════════════ REFLECTION BAND ═══════════════════ -->
 <div class="reflection-band">
   <div class="reflection-band-inner">
     <h3>Take a Moment. Answer These Honestly.</h3>
@@ -559,13 +727,12 @@
         <span class="reflect-q-num">Question 02</span>
         <p class="reflect-q">"Do I know what I am fully responsible for — and what I am not responsible for — on execution day?"</p>
       </div>
-      </div>
-       <div class="reflect-grid">
+    </div>
+    <div class="reflect-grid" style="margin-top:2px;">
       <div class="reflect-card">
         <span class="reflect-q-num">Question 03</span>
         <p class="reflect-q">"Am I arriving to Boule with a locked plan — or am I arriving with a list of things I hope work out?"</p>
       </div>
-      
       <div class="reflect-card">
         <span class="reflect-q-num">Question 04</span>
         <p class="reflect-q">"Who on this team needs more support right now — and have they said anything about it?"</p>
@@ -573,9 +740,107 @@
     </div>
   </div>
 </div>
-  
-<!-- ═══════════════════════════════ EXECUTION DAY ESSENTIALS ═══════════════════════════════ -->
+
+<!-- ═══════════════════════════════ PLANNING BEST PRACTICES — NEW SECTION ═══════════════════════════════ -->
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-quote">"Time lost in preparation shows up as pressure during execution. Every shortcut taken early will collect interest later. Preparation is not extra work. It is the work."<br><em>~ Dr. Jaye</em></p>
+    <span class="strip-attr">Planning Philosophy</span>
+  </div>
+</div>
+
 <section class="section">
+  <div class="section-label">Planning Best Practices <span class="new-badge">New</span></div>
+  <h2 class="section-title">What Disciplined Planning<br>Actually Looks Like</h2>
+  <p class="section-intro">
+    Planning is not the meeting you hold before the real work starts. Planning is the real work. What follows is the difference between a plan that holds under pressure and one that quietly breaks the moment execution begins.
+  </p>
+
+  <div class="ground-grid">
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🔍</span>
+        <span class="ground-num">Practice 01</span>
+        <div class="ground-title">Treat Small Details Like the Infrastructure They Are</div>
+        <p class="ground-text">There is no such thing as a minor detail in large-scale planning — only visible work and invisible work. The follow-up email nobody thought was necessary. The confirmation that felt redundant. The ClickUp notification that seemed like overkill. In planning, these feel like extra. In execution, they are the difference between flow and friction. Teams that dismiss small tasks as administrative noise are the same teams that spend execution day scrambling to reconstruct information they should have had locked down weeks earlier. Every small detail that gets tracked, confirmed, and closed in planning is one less fire to manage in real time.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>Do not close a planning task until the confirmation exists in writing. Not a verbal agreement. Not a "I think they said yes." A written confirmation with a name and a date. That extra five minutes in planning saves forty minutes of damage control on execution day.</span>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">📐</span>
+        <span class="ground-num">Practice 02</span>
+        <div class="ground-title">Solidify the Plan Before You Enter the Trenches</div>
+        <p class="ground-text">Not everything will be perfect. Every variable will not be controlled. But you can get close — and getting close matters. Because once execution is moving in real time, that is not the moment to still be building what should have already been outlined. That is not the moment to be guessing. That is not the moment to be making decisions that should have already been made weeks ago. Planning will never remove every problem. But it eliminates the preventable ones. The standard is not a perfect plan — it is a complete plan. A plan where the critical decisions are already made, the critical questions are already answered, and the team is not walking into execution still in discovery mode.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>At four weeks out, conduct a plan completeness audit. Not a status update — a structural check. Is every workstream owned? Is every contingency documented? Is every vendor confirmed in writing? Any gap at four weeks is a manageable risk. The same gap at four days is a crisis.</span>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">⚠️</span>
+        <span class="ground-num">Practice 03</span>
+        <div class="ground-title">Execution Will Always Expose the Truth About the Planning</div>
+        <p class="ground-text">Not the polished version. Not the hopeful version. The real version. The schedule will tell the truth. The transitions will tell the truth. The response time will tell the truth. Execution has a way of revealing whether the foundation was solid or shaky all along — and it reveals it publicly, in front of attendees, vendors, and leadership. Every gap left open in planning will surface. The only question is whether it surfaces during a planning meeting — where it costs a conversation — or during execution — where it costs composure, time, and trust.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>Run a truth audit before you lock the plan. Ask the team: if execution started tomorrow, what would break first? Name it specifically. Then close that gap before it closes itself on the conference floor.</span>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">🧩</span>
+        <span class="ground-num">Practice 04</span>
+        <div class="ground-title">The Visible Work Is Only Half the Plan</div>
+        <p class="ground-text">Every conference has a public-facing plan — the schedule, the agenda, the speaker lineup, the program. That is the visible work. What holds it together is the invisible work: the task nobody sees that makes the visible task possible. The AV check that happens two hours before the session. The volunteer briefing that happens the morning of. The registration backup process built in case the primary system goes down. Teams that plan only the visible work arrive to execution realizing the invisible work was never assigned, never confirmed, and never owned. That invisible layer is where most live events break — not in the scheduled moments, but in everything that was supposed to support them.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>For every major scheduled moment, list the three to five invisible tasks that make it possible. Assign each one. Confirm each one. A scheduled session without a confirmed AV owner and a tested backup is a risk wearing a program agenda.</span>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">⚡</span>
+        <span class="ground-num">Practice 05</span>
+        <div class="ground-title">Energy Is a Planning Variable — Not a Personal Problem</div>
+        <p class="ground-text">Fatigue shows up in missed details. Burnout shows up in delayed decisions. These are not character flaws — they are predictable outputs of a planning process that did not account for human capacity. The team managing Boule is not a machine. They have a finite amount of decision-making bandwidth per day. A planning schedule that demands sustained high-output over too many consecutive weeks will degrade the quality of the decisions being made — not dramatically, but quietly. The small things start getting skipped. The follow-up does not go out. The confirmation does not get requested. You manage the work. You also manage the people doing the work.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>In your final eight weeks of planning, identify the two or three highest cognitive-demand weeks on the schedule. Protect the team's bandwidth in those windows. Do not schedule unrelated decisions or heavy administrative work during peak planning periods. Energy is a resource. Plan for it the same way you plan for budget.</span>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <div class="ground-card-top">
+        <span class="ground-icon">👁</span>
+        <span class="ground-num">Practice 06</span>
+        <div class="ground-title">People Will Not See the Work. But They Will Feel the Results.</div>
+        <p class="ground-text">The attendees will never know what it took. They will not know about the vendor who confirmed three days late, the AV setup that ran two hours over, or the last-minute schedule rebuild. What they will know is how it felt to be there. Whether the transitions were smooth. Whether the space felt prepared. Whether the team they encountered seemed in control or in chaos. That gap — between what was carried and what was experienced — is the whole discipline of conference planning. The work that nobody sees is the work that everybody feels. That is the standard.</p>
+      </div>
+      <div class="ground-card-action">
+        <strong>What This Looks Like in Practice</strong>
+        <span>Before finalizing the plan, walk the attendee experience from arrival to departure. Not the planner's view — the attendee's view. What do they see first? What is the energy at registration? Every friction point in that walk is a planning gap. Find it now.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ EXECUTION DAY ESSENTIALS ═══════════════════════════════ -->
+<section class="section alt-bg">
   <div class="section-label">Execution Day Essentials</div>
   <h2 class="section-title">What Every Lead Needs<br>in Hand on Day One</h2>
   <p class="section-intro">
@@ -655,7 +920,7 @@
       <p class="sanity-text">Seamless execution is built in the transitions — the thirty-minute window between the end of one session and the start of the next, the moment someone reaches the registration desk and nobody is there, the silence before the AV picks up. Those micro-moments are where execution either holds or breaks. Milestone planning gets the team to the event. Micro-moment planning is what the attendee actually experiences. The run-of-show is the map. If a moment is not on the run-of-show, no one owns it. And if no one owns it, it will surface on the floor without a plan behind it.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Walk the run-of-show as a team and identify every gap between named moments. For each one: who owns it, what the cue is, and what smooth looks like. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed. Script every transition, not just the events. 
+        Walk the run-of-show as a team and identify every gap between named moments. For each one: who owns it, what the cue is, and what smooth looks like. Assign a human being — not a role, a name — to every critical moment on the schedule. What is not assigned is not managed. Script every transition, not just the events.
       </div>
     </div>
 
@@ -704,7 +969,7 @@
     <div class="sanity-card gold-top">
       <span class="sanity-icon">🔋</span>
       <div class="sanity-title">Energy is a Non-Renewable Resource During Event Week</div>
-      <p class="sanity-text">The team will arrive at conference week with a finite amount of energy. How that energy is deployed determines how much is left by the time the highest-demand moments arrive. Every task that should have been completed in planning but was not completed will drain from that reserve. Every decision that should have been pre-made but was not will cost more energy under pressure than it would have cost in a planning meeting. Protect the reserve by finishing the work early.</p>
+      <p class="sanity-text">The team will arrive at conference week with a finite amount of energy. How that energy is deployed determines how much is left by the time the highest-demand moments arrive. Every task that should have been completed in planning but was not will drain from that reserve. Every decision that should have been pre-made but was not will cost more energy under pressure than it would have cost in a planning meeting. Protect the reserve by finishing the work early.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
         Audit task completion two weeks before the event. Any task still in progress at that point is a risk. Push hard to close everything before conference week begins so the team arrives with energy instead of a list.
@@ -727,7 +992,7 @@
       <p class="sanity-text">A wellness anchor is not a feel-good title. It is a function with a specific job: monitor the wellbeing of the team during conference week and act on what they see. Not as a secondary responsibility layered onto another role — as an actual designation with real authority. They watch for signs of burnout and fatigue, ensure people are eating and hydrating, prompt breaks, and flag anyone who is struggling before that struggle appears in a critical moment on the conference floor. This role should be named, briefed, and empowered before Boule begins.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Name the wellness anchor before conference week. Give them explicit permission to pull people aside, redistribute tasks, and escalate wellbeing concerns the same way they would escalate a logistics problem. That permission needs to be given in writing before the event.
+        Name the wellness anchor before conference week. Give them explicit permission to pull people aside, redistribute tasks, and escalate wellbeing concerns the same way they would escalate a logistics problem. That permission needs to be given before the event begins.
       </div>
     </div>
 
@@ -766,7 +1031,7 @@
     <div class="sanity-card bur-top">
       <span class="sanity-icon">📋</span>
       <div class="sanity-title">Use a Live Issues Log — Every Time</div>
-      <p class="sanity-text">When something goes wrong during the event, it needs to be captured immediately — not held in someone's head, not sent in a group chat that will be scrolled past, and not left to be reconstructed from memory during the post-conference debrief. A live issues log is a shared document, accessible to all leads, where any problem is logged in real time with what happened, who handled it, and what the resolution was. It becomes the institutional memory of execution day.The format is simple: timestamp, issue, who handled it, resolution. What makes the log powerful is consistency — every problem gets logged, not just the big ones. When the team captures issues in real time, two things happen: first, the debrief becomes a structured conversation about documented facts rather than a memory exercise. Second, any pattern in the problems — a venue layout that is not working, a transition that keeps running long — becomes visible in time to adjust, not just in time to document as a lesson learned after it is too late to fix.</p>
+      <p class="sanity-text">When something goes wrong during the event, it needs to be captured immediately — not held in someone's head, not sent in a group chat that will be scrolled past, and not left to be reconstructed from memory during the post-conference debrief. A live issues log is a shared document, accessible to all leads, where any problem is logged in real time with what happened, who handled it, and what the resolution was. It becomes the institutional memory of execution day. The format is simple: timestamp, issue, who handled it, resolution. What makes the log powerful is consistency — every problem gets logged, not just the big ones.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
         Set up the live issues log before conference week and train every lead on how to use it. Two minutes of documentation in the moment is worth two hours of reconstruction at the debrief. Every lead logs every issue. No exceptions for "it was minor." Minor issues logged consistently reveal patterns. Unlogged minor issues just repeat.
@@ -775,11 +1040,11 @@
 
     <div class="sanity-card sage-top">
       <span class="sanity-icon">🤝</span>
-      <div class="sanity-title">Close the Loop with the Team — After It Is Over</div>
-      <p class="sanity-text">The transition from "it is over" to "it is truly over" requires a deliberate close. Teams that do not debrief together carry the emotional weight of the event into the next cycle without a release valve. What went well needs to be named specifically — not generally celebrated. What was hard needs to be surfaced honestly — not diplomatically softened. And the toll the work took needs to be acknowledged out loud — not glossed over in the celebration. Teams that process together arrive to the next planning cycle with stronger trust, cleaner lessons, and less unresolved tension. The debrief is not a meeting. It is a commitment to the team's long-term health.</p>
+      <div class="sanity-title">Let the Team Land Before the Next Thing Starts</div>
+      <p class="sanity-text">The moment a conference ends, the instinct is to move — immediately. Debrief. Wrap-up emails. Next project. The team is still running on adrenaline, and that energy can feel like productivity. It is not. Decisions made in the 24 hours after a major event are often the least clear-headed ones in the entire cycle. The team needs a deliberate landing window before re-engaging with analysis or next steps. Not days — just enough time for the nervous system to discharge the intensity. Recovery is not delay. It is the condition that makes the debrief honest and the lessons useful rather than reactive.</p>
       <div class="sanity-tip">
         <strong>What to do</strong>
-        Schedule the post-conference debrief before the conference happens. Within 14 days. Full team. That date is protected. Structured agenda. Come with the issues log. Discuss wins first, then growth areas, then action items for next time. Come ready to be honest. Do not let it become optional. The room deserves it.
+        Build a 24–48 hour rest window into the post-conference calendar before any debrief or follow-up activity begins. Communicate this to the team before Boule opens so it is an expectation, not a surprise. The debrief — which has its own structure covered in the Meeting Facilitation section — produces better outcomes when the team arrives rested rather than still running.
       </div>
     </div>
 
@@ -806,65 +1071,64 @@
       <div class="tip-title">Separate Your Identity from the Outcome</div>
       <p class="tip-text">This team has invested a significant part of their personal identity into making Boule excellent. That investment is appropriate. It is also a source of disproportionate stress when something goes wrong, because a problem with the event can feel like a problem with the person. Practice this distinction before you need it: something went wrong does not mean you failed. It means something went wrong. The response is what defines you — not the problem.</p>
     </div>
-    </div>
-     
-  <div class="tips-grid">
+  </div>
+
+  <div class="tips-grid" style="margin-top:16px;">
     <div class="tip-card bur">
       <span class="tip-num">Before It Starts</span>
       <div class="tip-title">Finish Strong in the Final Two Weeks</div>
-      <p class="tip-text">The stress you feel during conference week is often stress that was created in the two weeks before it. Tasks left undone. Decisions left open. Confirmations left unsent. Push hard to close every open item before conference week begins. Arrival energy matters. Show up with a list versus showing up ready is a completely different experience.</p>
+      <p class="tip-text">The stress you feel during conference week is often stress that was created in the two weeks before it. Tasks left undone. Decisions left open. Confirmations left unsent. Push hard to close every open item before conference week begins. Arrival energy matters. Showing up with a list versus showing up ready is a completely different experience.</p>
     </div>
-    
+
     <div class="tip-card bur">
       <span class="tip-num">Before It Starts</span>
       <div class="tip-title">Protect the 72 Hours Before the Event Opens</div>
       <p class="tip-text">Decision quality is directly tied to rest. The planning team should not be pulling all-nighters in the final days. Final prep activities need to be scheduled and time-capped. Build a rule: after 10 p.m. in the 72 hours before the event opens, the only acceptable work is genuine emergencies. Everything else waits until morning.</p>
     </div>
-</div>
-  
-     <div class="tips-grid">
+  </div>
+
+  <div class="tips-grid" style="margin-top:16px;">
     <div class="tip-card rose">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Eat. Hydrate. Move. On Purpose.</div>
-      <p class="tip-text">These sound basic. They are also the first things to disappear during a high-intensity event. They are also the inputs your decision-making runs on. Build your meals, your water, and a five-minute walk into your schedule the same way you build in meeting times. Not as an option. As a requirement. Your brain runs on glucose and hydration. When those drop, so does your judgment. Do not wait until you feel it — schedule it.</p>
+      <p class="tip-text">These sound basic. They are also the first things to disappear during a high-intensity event. Build your meals, your water, and a five-minute walk into your schedule the same way you build in meeting times. Not as an option. As a requirement. Your brain runs on glucose and hydration. When those drop, so does your judgment. Do not wait until you feel it — schedule it.</p>
     </div>
-       
+
     <div class="tip-card rose">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Use the Five-Second Reset</div>
-      <p class="tip-text">When something goes sideways, take five seconds before you react. Not five minutes. Five seconds. Breathe in, slow exhale. That window is enough to shift from reactive to responsive — from a decision made in panic to a decision made with composure. The five-second reset is free, invisible to everyone around you, and more powerful than any other in-the-moment stress tool. Practice it before you need it so it is available when you do.</p>
+      <p class="tip-text">When something goes sideways, take five seconds before you react. Not five minutes. Five seconds. Breathe in, slow exhale. That window is enough to shift from reactive to responsive — from a decision made in panic to a decision made with composure. The five-second reset is free, invisible to everyone around you, and more powerful than any other in-the-moment stress tool. Practice it before you need it.</p>
     </div>
-</div>
-  
-     <div class="tips-grid">
+  </div>
+
+  <div class="tips-grid" style="margin-top:16px;">
     <div class="tip-card rose">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Say What You Need Out Loud</div>
       <p class="tip-text">Teams under pressure often suffer in silence because everyone assumes everyone else is managing fine. If you need support, a swap, five minutes off the floor, or just someone to stand next to you for a minute — say it. Normalize asking. Normalize offering. It is how a high-performing team stays high-performing through the full duration of the event, not just the first half when energy is still high.</p>
     </div>
-       
+
     <div class="tip-card rose">
       <span class="tip-num">During Execution</span>
       <div class="tip-title">Find One Thing to Celebrate in Real Time</div>
-      <p class="tip-text">Execution narrows your field of view to what is not working. It is easy to see only the gaps. The thing that did not go as planned. The late vendor. The session that ran long. Train yourself to also notice what is working — and name it out loud to the person responsible. A quick "that registration flow has been flawless" or "the way you handled that situation was excellent." Real-time recognition costs nothing and sustains team morale through the second half of the event, when reserves are lower and the work still demands full effort.</p>
+      <p class="tip-text">Execution narrows your field of view to what is not working. Train yourself to also notice what is working — and name it out loud to the person responsible. A quick "that registration flow has been flawless" or "the way you handled that situation was excellent." Real-time recognition costs nothing and sustains team morale through the second half of the event, when reserves are lower and the work still demands full effort.</p>
     </div>
-</div>
-  
-     <div class="tips-grid">
-    <div class="tip-card sage">
-      <span class="tip-num">After It Is Over</span>
-      <div class="tip-title">Give Yourself Permission to Rest — Fully</div>
-      <p class="tip-text">After Boule week, the instinct is often to immediately decompress by diving into the debrief or the next project. Resist it. Give yourself 24 to 48 hours of actual rest before you re-engage. Your nervous system needs to discharge the intensity before you can assess it clearly. The debrief will be more honest, more useful, and less reactive when the team comes to it from a place of recovery rather than still running on adrenaline.</p>
-    </div>
-       
-    <div class="tip-card sage">
-      <span class="tip-num">After It Is Over</span>
-      <div class="tip-title">Acknowledge What It Actually Took</div>
-      <p class="tip-text">Not in a general sense — specifically. Write down three things that were genuinely hard about this planning cycle. Three things you did that you are proud of. Then share them in the debrief. The work this team carried is something significant. It deserves to be witnessed by each other, not just experienced by the attendees who had no idea what it cost to make Boule feel that effortless.</p>
-    </div>
-</div>
-  
   </div>
+
+  <div class="tips-grid" style="margin-top:16px;">
+    <div class="tip-card sage">
+      <span class="tip-num">After It Is Over</span>
+      <div class="tip-title">Do Not Let the Adrenaline Disguise Exhaustion</div>
+      <p class="tip-text">The 24 hours after a major conference often feel energizing. The event is done. The pressure is released. The adrenaline is still circulating. That feeling is deceptive. What the body is actually doing is recovering from a sustained period of high-output stress. The decisions made in this window tend to be impulsive, reactive, or incomplete — even when they feel confident. Protect the recovery window. The debrief, the lessons learned, and the next steps will all be cleaner when they come from a rested team rather than one still running on fumes.</p>
+    </div>
+
+    <div class="tip-card sage">
+      <span class="tip-num">After It Is Over</span>
+      <div class="tip-title">Carry the Standard — Not Just the Lessons</div>
+      <p class="tip-text">Debriefs capture what to do differently next time. What they rarely capture is what to keep. Before you close the cycle, name — for yourself — the things you did well that you want to intentionally repeat. The way you stayed composed in that moment. The decision you made under pressure that turned out to be the right one. The way you supported a team member when the energy was low. Lessons learned are about the work. This is about the professional. Bring both to the next cycle.</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══════════════════ RECHARGE TABLE ═══════════════════ -->
@@ -897,27 +1161,148 @@
   </div>
 </div>
 
-<!-- ═══════════════════ MASTER CHECKLIST ═══════════════════ -->
+<!-- ═══════════════════════════════ POST-BOULE MEETING FACILITATION ═══════════════════════════════ -->
 <section class="section alt-bg">
-  <div class="section-label">Reference Tool</div>
-  <h2 class="section-title">Pre-Conference Readiness Checklist</h2>
-  <p class="section-intro" style="margin-bottom:32px;">Use this as a team verification tool in your final planning meeting before conference week begins.</p>
-  <ul class="checklist">
-    <li><div class="check"></div> Master project schedule is finalized and baselined with milestone dates confirmed</li>
-    <li><div class="check"></div> RACI matrix is documented and every committee member has reviewed their role assignments</li>
-    <li><div class="check"></div> All vendor contracts are signed with deliverables, timelines, and contact names confirmed in writing</li>
-    <li><div class="check"></div> Run-of-show is built for each conference day with minute-by-minute sequencing and role-specific cues</li>
-    <li><div class="check"></div> Emergency contact directory is complete, printed, and distributed to all committee members</li>
-    <li><div class="check"></div> Contingency plans are documented for at least your top five identified risks</li>
-    <li><div class="check"></div> Budget actuals are reconciled and any variance has been escalated and approved</li>
-    <li><div class="check"></div> All printed materials have been proofed, approved, and confirmed for delivery</li>
-    <li><div class="check"></div> Registration process has been tested end-to-end with a designated lead assigned at the check-in desk</li>
-    <li><div class="check"></div> AV and technology setup has been confirmed with a dry-run scheduled before opening session</li>
-    <li><div class="check"></div> Committee members know their assigned stations, their break times, and their escalation contacts</li>
-    <li><div class="check"></div> Attendee communications (final reminders, schedules, logistics info) have been sent and confirmed delivered</li>
-    <li><div class="check"></div> Lessons learned log template is distributed and committee is committed to capturing in real time</li>
-    <li><div class="check"></div> Post-conference debrief is already scheduled with full committee attendance expected</li>
-  </ul>
+  <div class="section-label">After the Conference Closes</div>
+  <h2 class="section-title">Post-Boule Meeting<br>Facilitation</h2>
+  <div class="phase-header post" style="margin-bottom:36px;">
+    <span class="phase-header-badge">Post-Boule</span>
+    <div class="phase-header-title">Running the Meetings That Close the Cycle</div>
+    <span class="phase-header-sub">Within 14 days of conference close</span>
+  </div>
+  <div class="phase-header post">
+    <span class="phase-header-badge">Post-Boule</span>
+    <div class="phase-header-title">Running the Meetings That Close the Cycle</div>
+    <span class="phase-header-sub">Within 14 days of conference close</span>
+  </div>
+
+  <p style="font-size:15px;color:#5a4038;line-height:1.85;max-width:680px;margin-bottom:36px;">
+    The post-Boule meeting is not a celebration. It is not a complaint session. It is a structured, facilitated debrief — the professional close that a team of this caliber has earned and that the next planning cycle requires. The same facilitation disciplines that governed pre-Boule meetings apply here, with one addition: the goal is not to produce a plan. It is to produce truth.
+  </p>
+
+  <div class="pillars">
+
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Schedule It Before Boule Happens — and Protect That Date</div>
+        <p class="pillar-text">The post-Boule debrief that gets scheduled after the conference almost never happens. Everyone is exhausted. The urgency is gone. The window closes. The debrief that was supposed to happen "when things settle down" becomes the debrief that never happened — and the lessons from this cycle get carried silently into the next one, where they repeat. Schedule the debrief date before the conference opens. Put it on the calendar as a protected commitment, not a tentative placeholder. Full team attendance is the expectation, not the hope.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Set the date during your final pre-Boule team meeting. Announce it as a standing commitment: "Our debrief is [date]. It is already on the calendar. We will all be there." That framing matters. It signals that the meeting is not optional and that the work does not end when the conference does.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Lead With Wins — Then Open the Floor for What Was Hard</div>
+        <p class="pillar-text">The temptation in a post-event debrief is to go straight to what went wrong. Resist it. The team carried something significant, and that needs to be named before the critique begins. Start with specific wins — not general praise like "great job," but named, concrete moments: "The opening session ran flawlessly because of how the AV lead coordinated." Once wins are documented and heard, the team is in a more honest and less defensive place to discuss what was hard. That order is not courtesy — it is strategy.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Open the debrief with a structured round: each person names one thing that worked and one person on the team they want to specifically recognize. Record both. Then transition to challenges with the same structure: one thing that was harder than it should have been, and what you think caused it.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Use the Issues Log — Not Memory — as the Basis for Discussion</div>
+        <p class="pillar-text">The quality of a post-Boule debrief depends almost entirely on the quality of the documentation captured during execution. A debrief built on memory is a debrief built on selective, emotional, and often incomplete recall. A debrief built on a live issues log — where problems were captured in real time with timestamps, owners, and resolutions — is a debrief built on facts. That distinction changes the conversation from "I feel like there were a lot of registration problems" to "we logged seven registration issues in the first two hours, and here is what they had in common." One produces a feeling. The other produces an action item.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Distribute the issues log to all leads 48 hours before the debrief. Ask each person to review their area and come prepared to discuss patterns — not just incidents. The facilitator's job in this session is to move the conversation from "what happened" to "what does this tell us about our planning and execution systems."
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Distinguish Lessons Learned from Action Items</div>
+        <p class="pillar-text">Most debriefs produce a list of lessons learned that no one ever acts on. The reason is simple: a lesson without an owner and a deadline is an observation, not a commitment. The post-Boule debrief needs to produce two distinct outputs. The first is a lessons-learned record — a documented account of what happened, what worked, and what did not, for institutional memory and future teams. The second is a short action item list — specific, named, time-bound changes to systems, processes, or role assignments that will be different next cycle. These are not the same document, and treating them as the same is why the same problems repeat.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          At the end of the debrief, explicitly sort every item raised into one of two columns: "Lessons Learned" (captured for the record) or "Action Items" (assigned to an owner with a deadline). Nothing leaves the debrief ambiguous. The lessons-learned document goes into the planning archive. The action item list goes into the project tracker.
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <div class="pillar-title">Acknowledge the Toll Before You Close the Meeting</div>
+        <p class="pillar-text">The final agenda item of the post-Boule debrief is not a task item. It is a human one. Before the meeting closes, the facilitator creates space for the team to name what the work actually cost — not to dwell there, but to honor it. The late nights. The decision fatigue. The moments nobody outside this room witnessed. Teams that skip this step carry unacknowledged weight into the next cycle. Teams that name it together are lighter for it. That acknowledgment is not soft. It is what makes a team want to show up and do it again.</p>
+        <div class="pillar-pro-tip">
+          <strong>Facilitator Practice</strong>
+          Close the debrief with one final round: "Name one thing this planning cycle asked of you personally — and one thing you are proud of." It does not need to be long. Three minutes. It completes the cycle with honesty and dignity. It is the professional close this team has earned.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POST-BOULE CHECKLIST -->
+  <div style="margin-top:56px;">
+    <div class="phase-header post" style="margin-top:0;">
+      <span class="phase-header-badge">Checklist</span>
+      <div class="phase-header-title">Post-Boule Meeting Verification</div>
+      <span class="phase-header-sub">Debrief readiness &amp; close</span>
+    </div>
+    <p style="font-size:14px;color:#5a4038;line-height:1.8;max-width:680px;margin-bottom:24px;">Use this to prepare for and run the post-Boule debrief. Every item should be confirmed before the meeting opens.</p>
+    <ul class="post-checklist">
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Scheduling</span>Debrief date was set before Boule opened and is confirmed on all team members' calendars</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Rest Window</span>A minimum of 24–48 hours of recovery time has passed before the debrief convenes</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Documentation</span>The live issues log has been compiled, organized by workstream, and distributed to all leads 48 hours in advance</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Preparation</span>Each lead has reviewed their section of the issues log and is prepared to discuss patterns — not just incidents</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Agenda</span>Structured debrief agenda is distributed in advance: wins first, challenges second, lessons learned, action items, and team close</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Facilitation</span>A designated facilitator is assigned — separate from the person who managed overall conference operations — to ensure objective facilitation</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Documentation</span>A note-taker is assigned to capture wins, challenges, lessons learned, and action items in real time during the debrief</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Wins</span>Specific, named wins have been identified and are ready to be shared — not general praise, but documented moments and the people behind them</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Lessons Learned</span>A lessons-learned template is ready for the team to populate: what happened, what caused it, and what a different approach would look like next cycle</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Action Items</span>Action items are separated from lessons learned — each item is specific, assigned to a named owner, and carries a deadline before the meeting closes</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Archive</span>Lessons-learned document, issues log, and action item list are stored in a shared location accessible to future planning teams</div>
+      </li>
+      <li>
+        <div class="post-check"></div>
+        <div><span class="post-checklist-label">Team Close</span>The final debrief agenda item is reserved for team acknowledgment — naming what the work cost and what each person is proud of before the meeting formally closes</div>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <!-- ═══════════════════ CLOSER ═══════════════════ -->
@@ -932,7 +1317,7 @@
       Prepared by Dr. Minina Johnson, DBA, PMP &nbsp;|&nbsp; Greater Ambitions LLC &nbsp;|&nbsp; Tucson, AZ
     </div>
     <div class="logo-block">
-      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='rev-Screenshot-2026-04-27-at-10-23-19-AM'></a>
+      <a href='https://postimg.cc/bSYhPL8Q' target='_blank'><img src='https://i.postimg.cc/bSYhPL8Q/rev-Screenshot-2026-04-27-at-10-23-19-AM.png' border='0' alt='Greater Ambitions LLC'></a>
     </div>
     <br>
     <div style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;color:var(--gold-pale);text-transform:uppercase;border:1px solid rgba(168,118,5,0.4);padding:14px 32px;display:inline-block;">
